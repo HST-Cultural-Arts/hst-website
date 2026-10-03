@@ -1,12 +1,11 @@
 ---
 layout: ../layouts/ContentLayout.astro
 title: Contact
+hero:
+  title: Contact
+  subtitle: We would love to hear from you.
+  align: left
 ---
-
-# Contact HST Cultural Arts
-
-We would love to hear from you. Contact us with questions about programs,
-registration, performances, volunteering, or any other part of HST.
 
 ## Get in Touch
 

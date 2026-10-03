@@ -1,9 +1,11 @@
 ---
 layout: ../layouts/ContentLayout.astro
 title: Support Us
+hero:
+  title: Support Us
+  subtitle: Your support helps make arts education available to more children.
+  align: left
 ---
-
-# Support HST Cultural Arts
 
 Your support helps make arts education available to more children in our
 community.

@@ -1,11 +1,30 @@
 ---
-import '../styles/content-layout.css';
+import "../styles/content-layout.css";
 import PageLayout from "./PageLayout.astro";
+import Button from "../components/Button.astro";
 const { frontmatter } = Astro.props;
+const { hero } = frontmatter;
 ---
 
 <PageLayout title={`${frontmatter.title} - HST Cultural Arts`}>
-  <main>
+  {
+    hero && (
+      <section class={`content-hero content-hero--${hero.align ?? "left"}`}>
+        <div class="content-hero__inner">
+          <h1>{hero.title ?? frontmatter.title}</h1>
+          {hero.subtitle && <p class="content-hero__subtitle">{hero.subtitle}</p>}
+          {hero.button && (
+            <Button
+              href={hero.button.href}
+              title={hero.button.title}
+              type={hero.button.type ?? "primary"}
+            />
+          )}
+        </div>
+      </section>
+    )
+  }
+  <article class="content-page">
     <slot />
-  </main>
+  </article>
 </PageLayout>
