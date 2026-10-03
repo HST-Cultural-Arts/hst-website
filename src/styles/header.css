@@ -1,0 +1,71 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--space-md);
+    background-color: var(--color-header-bg);
+    border-bottom: 1px solid var(--color-border-inverse);
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--color-text-inverse);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-md);
+}
+
+header nav ul li {
+    display: flex;
+}
+
+header nav ul li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .nav-links ul li a {
+    color: var(--color-text-inverse);
+    flex-direction: column;
+    align-items: stretch;
+}
+
+header .nav-links ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-text-inverse);
+    transition: width var(--transition-fast);
+}
+
+header .nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+header .cta-links ul li a {
+    background-color: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text);
+    border: 1px solid var(--color-btn-secondary-border);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+header .cta-links ul li a:hover {
+    background-color: var(--color-btn-secondary-bg-hover);
+}

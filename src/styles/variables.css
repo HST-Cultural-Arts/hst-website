@@ -1,0 +1,149 @@
+:root {
+    /* ---------------------------------------------------------
+       1. RAW PALETTE
+       Sampled from the approved concept comp.
+       Only reference these from the semantic layer below.
+       --------------------------------------------------------- */
+
+    /* Deep navy — header, footer, display text */
+    --navy-950: #05080f;
+    --navy-900: #0a101c;
+    --navy-800: #101827;
+    --navy-700: #172032;
+
+    /* Slate blue — banner band, headings, links */
+    --slate-700: #24364e;
+    --slate-600: #2f4460;
+    --slate-500: #3d5878;
+    --slate-400: #6a8cbe;
+    --slate-300: #8fa9cf;
+
+    /* Antique gold — primary CTA, eyebrow text, accents */
+    --gold-300: #e3cd94;
+    --gold-400: #d4b878;
+    --gold-500: #c2a05a;
+    --gold-600: #a5853f;
+    --gold-700: #7d6531;
+
+    /* Cream — page canvas and light surfaces */
+    --cream-50: #fdfbf6;
+    --cream-100: #f9f5ec;
+    --cream-200: #f2ecdf;
+    --cream-300: #e8e0cd;
+
+    /* Stone — muted body copy and hairlines */
+    --stone-200: #e6e1d6;
+    --stone-300: #d5d0c4;
+    --stone-400: #b9bec7;
+    --stone-500: #9aa1ac;
+    --stone-600: #6f7681;
+    --stone-700: #4a5058;
+
+    /* White / ink neutrals */
+    --white: #ffffff;
+    --ink-400: #5c6270;
+    --ink-700: #3f4550;
+    --ink-900: #1b1f26;
+
+    /* ---------------------------------------------------------
+       2. SEMANTIC TOKENS
+       Components should reference these, not the raw palette.
+       --------------------------------------------------------- */
+
+    /* Surfaces */
+    --color-bg: var(--cream-100);
+    --color-surface: var(--white);
+    --color-surface-alt: #f6f5f1;
+    --color-surface-inverse: var(--navy-900);
+
+    /* Brand surfaces */
+    --color-header-bg: var(--navy-900);
+    --color-footer-bg: var(--navy-950);
+    --color-banner-bg: var(--slate-600);
+    --color-hero-overlay: rgba(5, 8, 15, 0.55);
+    --color-hero-scrim: rgba(5, 8, 15, 0.75);
+
+    /* Text */
+    --color-text-heading: var(--navy-800);
+    --color-text-body: var(--ink-700);
+    --color-text-muted: var(--ink-400);
+    --color-text-subtle: var(--stone-500);
+    --color-text-inverse: var(--cream-50);
+    --color-text-inverse-muted: var(--stone-400);
+    --color-text-accent: var(--gold-600);
+
+    /* Interactive */
+    --color-link: var(--slate-500);
+    --color-link-hover: var(--navy-800);
+    --color-link-inverse: var(--gold-300);
+    --color-focus-ring: var(--gold-500);
+
+    /* Buttons */
+    --color-btn-primary-bg: var(--gold-400);
+    --color-btn-primary-bg-hover: var(--gold-300);
+    --color-btn-primary-text: var(--navy-900);
+    --color-btn-secondary-bg: transparent;
+    --color-btn-secondary-bg-hover: var(--navy-700);
+    --color-btn-secondary-text: var(--cream-50);
+    --color-btn-secondary-border: rgba(253, 251, 246, 0.55);
+
+    /* Borders & dividers */
+    --color-border: var(--stone-200);
+    --color-border-strong: var(--stone-300);
+    --color-border-inverse: rgba(253, 251, 246, 0.16);
+
+    /* Status */
+    --color-success: #4f7a53;
+    --color-warning: #c98b3a;
+    --color-error: #a4453c;
+    --color-info: var(--slate-500);
+
+    /* ---------------------------------------------------------
+       3. TYPOGRAPHY
+       Display serif matches the wordmark; sans for UI and body.
+       --------------------------------------------------------- */
+    --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Helvetica, Arial, sans-serif;
+
+    --text-eyebrow: 0.75rem;
+    --text-xs: 0.8125rem;
+    --text-sm: 0.9375rem;
+    --text-base: 1.0625rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.75rem;
+    --text-4xl: 3.5rem;
+
+    --leading-tight: 1.15;
+    --leading-snug: 1.35;
+    --leading-normal: 1.6;
+    --tracking-wide: 0.18em;
+    --tracking-normal: 0.01em;
+
+    /* ---------------------------------------------------------
+       4. SPACE, RADIUS, SHADOW, MOTION
+       --------------------------------------------------------- */
+    --space-3xs: 0.25rem;
+    --space-2xs: 0.5rem;
+    --space-xs: 0.75rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-pill: 999px;
+
+    --shadow-sm: 0 1px 2px rgba(27, 31, 38, 0.06);
+    --shadow-md: 0 4px 12px rgba(27, 31, 38, 0.08);
+    --shadow-lg: 0 12px 32px rgba(27, 31, 38, 0.12);
+
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+}
