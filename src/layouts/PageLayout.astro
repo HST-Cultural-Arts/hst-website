@@ -1,26 +1,40 @@
 ---
-import '../styles/global.css';
-import '../styles/variables.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import "../styles/variables.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title = "HST Cultural Arts" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>HST Cultural Arts</title>
-	</head>
-	<body>
-		<Header />
-		<main>
-		<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/brand/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="HST" />
+    <link rel="manifest" href="/assets/brand/favicon/site.webmanifest" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
-
