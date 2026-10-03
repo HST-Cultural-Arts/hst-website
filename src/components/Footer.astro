@@ -1,0 +1,67 @@
+---
+import "../styles/footer.css";
+
+const currentYear = new Date().getFullYear();
+
+const exploreLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
+
+const involvementLinks = [
+  { name: "Join Us", href: "/join-us" },
+  { name: "Support Us", href: "/support-us" },
+];
+---
+
+<footer>
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="footer__logo" href="/">
+        <img
+          src="/assets/brand/HST-logo-white.png"
+          alt="HST Cultural Arts"
+          width="273"
+          height="179"
+        />
+        <h1>Cultural Arts</h1>
+      </a>
+      <p>
+        Creating opportunities for homeschool students to discover confidence,
+        creativity, and community through the cultural arts.
+      </p>
+    </div>
+
+    <nav class="footer__column" aria-label="Explore">
+      <h2>Explore</h2>
+      <ul>
+        {exploreLinks.map((link) => (
+          <li><a href={link.href}>{link.name}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav class="footer__column" aria-label="Get involved">
+      <h2>Get Involved</h2>
+      <ul>
+        {involvementLinks.map((link) => (
+          <li><a href={link.href}>{link.name}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="footer__column">
+      <h2>Contact</h2>
+      <address>
+        <span>hstalents@gmail.com</span>
+        <span>240-997-5796</span>
+        <span>P.O. Box 150<br />Rockville, MD 20848</span>
+      </address>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; {currentYear} HST Cultural Arts. All rights reserved.</p>
+  </div>
+</footer>

@@ -51,7 +51,7 @@
        --------------------------------------------------------- */
 
     /* Surfaces */
-    --color-bg: var(--cream-100);
+    --color-bg: var(--cream-200);
     --color-surface: var(--white);
     --color-surface-alt: #f6f5f1;
     --color-surface-inverse: var(--navy-900);
