@@ -10,8 +10,21 @@ header {
 header h1 {
     margin: 0;
     font-family: var(--font-display);
-    font-size: var(--text-2xl);
+    font-size: var(--text-sm);
     color: var(--color-text-inverse);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+header .brand {
+    display: flex;
+    align-items: center;
+}
+
+header .brand img {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 header nav {
@@ -68,4 +81,25 @@ header .cta-links ul li a {
 
 header .cta-links ul li a:hover {
     background-color: var(--color-btn-secondary-bg-hover);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin: 0;
+        padding: var(--space-sm) 0;
+        border-top: 1px solid var(--color-border-inverse);
+        justify-content: center;
+        width: 100%;
+    }
+
+    header nav ul {
+        align-items: center;
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
 }
