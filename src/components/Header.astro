@@ -1,0 +1,35 @@
+---
+const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Events', href: '/events' },
+    { name: 'Contact', href: '/contact' },
+];
+
+const ctaLinks = [
+    { name: 'Donate', href: '/donate' },
+    { name: 'Volunteer', href: '/volunteer' },
+];
+---
+
+<header>
+    <a href="/"><h1>HST Cultural Arts</h1></a>
+    <nav class="nav-links">
+        <ul>
+            {navLinks.map((link) => (
+                <li>
+                    <a href={link.href}>{link.name}</a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+    <nav class="cta-links">
+        <ul>
+            {ctaLinks.map((cta) => (
+                <li>
+                    <a href={cta.href}>{cta.name}</a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</header>
