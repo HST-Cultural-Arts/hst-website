@@ -3,18 +3,17 @@ import '../styles/header.css';
 const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Events', href: '/events' },
     { name: 'Contact', href: '/contact' },
 ];
 
 const ctaLinks = [
-    { name: 'Donate', href: '/donate' },
-    { name: 'Volunteer', href: '/volunteer' },
+    { name: 'Support Us', href: '/support-us' },
+    { name: 'Join Us', href: '/join-us' },
 ];
 ---
 
 <header>
-    <a class="brand" href="/"><img src="../HST-logo-white.png" alt="Logo"> <h1> Cultural Arts</h1></a>
+    <a class="brand" href="/"><img src="/assets/brand/HST-logo-white.png" alt="HST Cultural Arts" width="273" height="179"> <h1> Cultural Arts</h1></a>
     <nav class="nav-links">
         <ul>
             {navLinks.map((link) => (
