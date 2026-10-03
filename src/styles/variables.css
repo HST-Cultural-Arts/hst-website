@@ -91,6 +91,7 @@
     --color-border: var(--stone-200);
     --color-border-strong: var(--stone-300);
     --color-border-inverse: rgba(253, 251, 246, 0.16);
+    --color-border-gold: var(--gold-500);
 
     /* Status */
     --color-success: #4f7a53;
@@ -138,6 +139,8 @@
     --radius-sm: 2px;
     --radius-md: 4px;
     --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-2xl: 16px;
     --radius-pill: 999px;
 
     --shadow-sm: 0 1px 2px rgba(27, 31, 38, 0.06);

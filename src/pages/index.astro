@@ -1,9 +1,28 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import PageLayout from "../layouts/PageLayout.astro";
+import ContentSection from "../components/ContentSection.astro";
+import Button from "../components/Button.astro";
+import ContentBlock from "../components/ContentBlock.astro";
 ---
 
 <PageLayout>
+  <ContentSection type="home-hero" cols="1">
+    <h1>Welcome to HST Cultural Arts</h1>
+    <p>Dance • Acting • Troupes • Tech</p>
+    <Button href="/about" title="Discover HST" type="primary" />
+  </ContentSection>
+  <ContentSection type="grid" cols="2">
+	<ContentBlock>
+		<h2>About HST</h2>
+		<p>
+		We are nonprofit children's theater organization dedicated to providing high quality arts programs where
+		students can explore their talents, build confidence, and be part of
+		something special.
+		</p>
+		<Button href="/about" title="Learn More" type="primary" />
+	</ContentBlock>
+	<ContentBlock>
+		<img src="/HST-logo-white-on-black.png" alt="HST students performing on stage" />
+	</ContentBlock>
+  </ContentSection>
 </PageLayout>
