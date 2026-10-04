@@ -112,6 +112,16 @@ content:
           collapsible:
             collapsed: true
             summary: "{fields.type}"
+    actions:
+      - name: deploy-site
+        label: Deploy to production
+        workflow: pages-cms-deploy.yml
+        ref: current
+        cancelable: false
+        confirm:
+          title: Deploy to production?
+          message: This will validate the editing branch and merge it into main.
+          button: Deploy
 
 settings:
   content:
