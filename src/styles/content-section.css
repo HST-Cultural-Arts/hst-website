@@ -1,6 +1,6 @@
 .content-section {
     margin: 0 var(--space-xl);
-    padding: var(--space-lg) 0;
+    padding: var(--space-2xl) 0;
     min-height: 15vh;
     display: flex;
     flex-direction: column;
@@ -36,17 +36,17 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.content-section h1,
-.content-section h2,
-.content-section h3,
-.content-section h4,
-.content-section p {
+.content-section > h1,
+.content-section > h2,
+.content-section > h3,
+.content-section > h4,
+.content-section > p {
     margin: 0;
 }
 
 .content-section--hero {
     min-height: 22vh;
-    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: var(--space-xl);
     background-color: var(--color-surface-inverse);
