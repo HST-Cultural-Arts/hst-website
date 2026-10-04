@@ -20,6 +20,25 @@ components:
         options:
           values: [primary, secondary]
 
+  image:
+    type: object
+    label: Image
+    fields:
+      - name: src
+        label: Image file
+        type: image
+      - name: alt
+        label: Accessibility text
+        type: string
+      - name: width
+        label: Width (pixels)
+        type: number
+        description: Leave blank to size automatically.
+      - name: height
+        label: Height (pixels)
+        type: number
+        description: Leave blank to size automatically.
+
   section:
     type: object
     label: Section
@@ -52,21 +71,7 @@ components:
             label: Text
             type: rich-text
           - name: image
-            label: Image
-            type: object
-            fields:
-              - name: src
-                label: File
-                type: image
-              - name: alt
-                label: Alternative text
-                type: string
-              - name: width
-                label: Width (pixels)
-                type: number
-              - name: height
-                label: Height (pixels)
-                type: number
+            component: image
           - name: button
             component: button
 
@@ -78,7 +83,6 @@ content:
     format: yaml-frontmatter
     exclude:
       - index.astro
-      - "[slug].astro"
     filename: "{primary}.md"
     view:
       primary: title
