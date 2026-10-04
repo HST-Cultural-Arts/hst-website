@@ -3,25 +3,34 @@ layout: ../layouts/ContentLayout.astro
 title: Support Us
 sections:
   - type: hero
+    layout: flex
     cols: 1
     blocks:
-      - heading: Support Us
-        text: Your support helps make arts education available to more children.
+      - text: |
+          # Support Us
+
+          Your support helps make arts education available to more children.
   - type: default
+    layout: flex
     cols: 1
     blocks:
-      - heading: Make a Difference
-        text: Your support helps make arts education available to more children in our community.
+      - text: |
+          ## Make a Difference
+
+          Your support helps make arts education available to more children in our community.
   - type: default
+    layout: flex
     cols: 1
     blocks:
-      - heading: Donations Help Cover
-        text: |
-          • Costumes, props, and production supplies
-          • Safe rehearsal spaces
-          • Theater rental fees
-          • Other expenses to keep HST running smoothly
+      - text: |
+          ## Donations Help Cover
+
+          - Costumes, props, and production supplies
+          - Safe rehearsal spaces
+          - Theater rental fees
+          - Other expenses to keep HST running smoothly
   - type: default
+    layout: flex
     cols: 1
     blocks:
       - button:

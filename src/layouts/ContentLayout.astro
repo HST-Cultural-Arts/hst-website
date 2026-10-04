@@ -1,5 +1,4 @@
 ---
-import "../styles/content-layout.css";
 import PageLayout from "./PageLayout.astro";
 import Button from "../components/Button.astro";
 import ContentBlock from "../components/ContentBlock.astro";
@@ -13,17 +12,19 @@ type ButtonData = {
 };
 
 type ContentBlockData = {
-  heading?: string;
   text?: string;
   image?: {
     src: string;
     alt?: string;
+    width?: number;
+    height?: number;
   };
   button?: ButtonData;
 };
 
 type Section = {
   type: "hero" | "default";
+  layout?: "flex" | "grid";
   cols?: number;
   blocks?: ContentBlockData[];
 };
@@ -39,21 +40,26 @@ const { title, sections = [] } =
 
 <PageLayout title={`${title} - HST Cultural Arts`}>
   {sections.map((section) => (
-    <ContentSection type={section.type} cols={section.cols}>
+    <ContentSection
+      type={section.type}
+      layout={section.layout}
+      cols={section.cols}
+    >
       {section.blocks?.map((block) => (
         <ContentBlock>
-          {block.heading &&
-            (section.type === "hero" ? (
-              <h1>{block.heading}</h1>
-            ) : (
-              <h2>{block.heading}</h2>
-            ))}
           {block.text && <MarkdownContent text={block.text} />}
           {block.image?.src && (
             <img
               src={block.image.src}
               alt={block.image.alt ?? ""}
               loading="lazy"
+              width={block.image.width}
+              height={block.image.height}
+              style={`
+                ${block.image.width === undefined && block.image.height !== undefined ? "width: auto;" : ""}
+                ${block.image.width !== undefined ? `width: ${block.image.width}px;` : ""}
+                ${block.image.height !== undefined ? `height: ${block.image.height}px;` : ""}
+              `}
             />
           )}
           {block.button && (
@@ -67,7 +73,4 @@ const { title, sections = [] } =
       ))}
     </ContentSection>
   ))}
-  <article class="content-page">
-    <slot />
-  </article>
 </PageLayout>
