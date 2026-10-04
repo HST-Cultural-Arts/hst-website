@@ -3,15 +3,18 @@ import "../styles/footer.css";
 
 const currentYear = new Date().getFullYear();
 
-const exploreLinks = [
+const column1Links = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
-
-const involvementLinks = [
   { name: "Join Us", href: "/join-us" },
   { name: "Support Us", href: "/support-us" },
+];
+
+const column2Links = [
+  { name: "Acting", href: "/programs/acting" },
+  { name: "Dance", href: "/programs/dance" },
+  { name: "Choir", href: "/programs/choir" },
+  { name: "Tech", href: "/programs/tech" },
 ];
 ---
 
@@ -36,18 +39,26 @@ const involvementLinks = [
     <nav class="footer__column" aria-label="Explore">
       <h2>Explore</h2>
       <ul>
-        {exploreLinks.map((link) => (
-          <li><a href={link.href}>{link.name}</a></li>
-        ))}
+        {
+          column1Links.map((link) => (
+            <li>
+              <a href={link.href}>{link.name}</a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
-    <nav class="footer__column" aria-label="Get involved">
-      <h2>Get Involved</h2>
+    <nav class="footer__column" aria-label="Programs">
+      <h2>Programs</h2>
       <ul>
-        {involvementLinks.map((link) => (
-          <li><a href={link.href}>{link.name}</a></li>
-        ))}
+        {
+          column2Links.map((link) => (
+            <li>
+              <a href={link.href}>{link.name}</a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
