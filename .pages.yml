@@ -20,24 +20,46 @@ components:
         options:
           values: [primary, secondary]
 
-  hero:
+  section:
     type: object
-    label: Hero
+    label: Section
     fields:
-      - name: title
-        label: Heading
-        type: string
-        required: true
-      - name: subtitle
-        label: Subtitle
-        type: text
-      - name: align
-        label: Alignment
+      - name: type
+        label: Section type
         type: select
         options:
-          values: [left, center]
-      - name: button
-        component: button
+          values: [hero, default]
+      - name: cols
+        label: Columns
+        type: select
+        options:
+          values: [1, 2, 3, 4, 5]
+      - name: blocks
+        label: Content blocks
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{heading} ({index})"
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: text
+            label: Text
+            type: rich-text
+          - name: image
+            label: Image
+            type: object
+            fields:
+              - name: src
+                label: File
+                type: image
+              - name: alt
+                label: Alternative text
+                type: string
+          - name: button
+            component: button
 
 content:
   - name: pages
@@ -63,11 +85,13 @@ content:
         label: Page title
         type: string
         required: true
-      - name: hero
-        component: hero
-      - name: body
-        label: Page content
-        type: rich-text
+      - name: sections
+        label: Page sections
+        component: section
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{type} ({index})"
 
 settings:
   content:
