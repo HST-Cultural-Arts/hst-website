@@ -111,7 +111,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{type}"
+            summary: "{fields.type}"
 
 settings:
   content:
