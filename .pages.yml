@@ -1,7 +1,14 @@
 media:
-  input: public/assets/uploads
-  output: /assets/uploads
-  categories: [image]
+  - name: uploads
+    label: Page uploads
+    input: public/assets/uploads
+    output: /assets/uploads
+    categories: [image]
+  - name: brand
+    label: Brand assets
+    input: public/assets/brand
+    output: /assets/brand
+    categories: [image]
 
 components:
   button:
@@ -104,7 +111,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{type} ({index})"
+            summary: "{type}"
 
 settings:
   content:
