@@ -1,0 +1,74 @@
+media:
+  input: public/assets/uploads
+  output: /assets/uploads
+  categories: [image]
+
+components:
+  button:
+    type: object
+    label: Button
+    fields:
+      - name: title
+        label: Text
+        type: string
+      - name: href
+        label: Link
+        type: string
+      - name: type
+        label: Style
+        type: select
+        options:
+          values: [primary, secondary]
+
+  hero:
+    type: object
+    label: Hero
+    fields:
+      - name: title
+        label: Heading
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: text
+      - name: align
+        label: Alignment
+        type: select
+        options:
+          values: [left, center]
+      - name: button
+        component: button
+
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/pages
+    format: yaml-frontmatter
+    exclude:
+      - index.astro
+      - "[slug].astro"
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: ../layouts/ContentLayout.astro
+        hidden: true
+        readonly: true
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: hero
+        component: hero
+      - name: body
+        label: Page content
+        type: rich-text
+
+settings:
+  content:
+    merge: true
