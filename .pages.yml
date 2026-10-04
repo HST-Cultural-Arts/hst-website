@@ -115,6 +115,7 @@ content:
     actions:
       - name: deploy-site
         label: Deploy to production
+        scope: collection
         workflow: pages-cms-deploy.yml
         ref: current
         cancelable: false
