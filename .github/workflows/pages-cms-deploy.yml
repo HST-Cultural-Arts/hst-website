@@ -18,14 +18,14 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.ref_name != 'main'
+    if: github.ref_name == 'editing'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out editing branch
+      - name: Check out preview branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: preview
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -43,7 +43,7 @@ jobs:
       - name: Create or update production pull request
         env:
           GH_TOKEN: ${{ github.token }}
-          SOURCE_BRANCH: ${{ github.ref_name }}
+          SOURCE_BRANCH: preview
         run: |
           pr_number="$(gh pr list \
             --repo "$GITHUB_REPOSITORY" \
@@ -58,8 +58,8 @@ jobs:
               --repo "$GITHUB_REPOSITORY" \
               --base main \
               --head "$SOURCE_BRANCH" \
-              --title "Deploy CMS changes" \
-              --body "Automated deployment request from the PagesCMS editing branch.")"
+              --title "Publish preview to production" \
+              --body "Automated deployment request from the PagesCMS preview branch.")"
           fi
 
           gh pr merge "$pr_number" \

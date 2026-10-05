@@ -30,7 +30,7 @@ jobs:
       - name: Create preview snapshot
         env:
           SOURCE_BRANCH: ${{ github.ref_name }}
-          PREVIEW_BRANCH: preview-branch
+          PREVIEW_BRANCH: preview
         run: |
           git fetch origin "$SOURCE_BRANCH"
           git config user.name "github-actions[bot]"
@@ -61,8 +61,8 @@ jobs:
 
       - name: Publish preview branch
         env:
-          PREVIEW_BRANCH: preview-branch
+          PREVIEW_BRANCH: preview
         run: git push --force origin "HEAD:$PREVIEW_BRANCH"
 
       - name: Write preview URL
-        run: 'echo "Preview URL: https://preview-branch.hstonline.pages.dev" >> "$GITHUB_STEP_SUMMARY"'
+        run: 'echo "Preview URL: https://preview.hstonline.pages.dev" >> "$GITHUB_STEP_SUMMARY"'
