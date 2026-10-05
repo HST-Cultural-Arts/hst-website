@@ -1,0 +1,68 @@
+name: Preview CMS changes
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS action payload
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pagescms-preview-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    if: github.ref_name == 'editing'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out production base
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Create preview snapshot
+        env:
+          SOURCE_BRANCH: ${{ github.ref_name }}
+          PREVIEW_BRANCH: preview-branch
+        run: |
+          git fetch origin "$SOURCE_BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git reset --hard origin/main
+          git clean -fdx
+          git read-tree --reset -u "origin/$SOURCE_BRANCH"
+          git add --all
+
+          if git diff --cached --quiet; then
+            echo "Editing branch already matches main."
+          else
+            git commit -m "Update preview from $SOURCE_BRANCH"
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build preview site
+        run: npm run build
+
+      - name: Publish preview branch
+        env:
+          PREVIEW_BRANCH: preview-branch
+        run: git push --force origin "HEAD:$PREVIEW_BRANCH"
+
+      - name: Write preview URL
+        run: 'echo "Preview URL: https://preview-branch.hstonline.pages.dev" >> "$GITHUB_STEP_SUMMARY"'
