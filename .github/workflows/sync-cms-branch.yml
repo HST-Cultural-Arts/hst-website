@@ -1,0 +1,34 @@
+name: Sync CMS editing branch
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cms-branch-sync-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: >-
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.base.ref == 'main' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Reset editing branch to deployed main
+        env:
+          SOURCE_BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git fetch origin main "$SOURCE_BRANCH"
+          git push --force origin "origin/main:$SOURCE_BRANCH"

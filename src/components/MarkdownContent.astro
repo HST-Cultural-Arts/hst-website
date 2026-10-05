@@ -1,0 +1,9 @@
+---
+import { marked } from "marked";
+import "../styles/content-block.css";
+
+const { text = "" } = Astro.props;
+const html = marked.parse(text);
+---
+
+<div class="content-block__text" set:html={html} />

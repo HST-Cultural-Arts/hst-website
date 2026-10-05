@@ -1,0 +1,129 @@
+media:
+  - name: uploads
+    label: Page uploads
+    input: public/assets/uploads
+    output: /assets/uploads
+    categories: [image]
+  - name: brand
+    label: Brand assets
+    input: public/assets/brand
+    output: /assets/brand
+    categories: [image]
+
+components:
+  button:
+    type: object
+    label: Button
+    fields:
+      - name: title
+        label: Text
+        type: string
+      - name: href
+        label: Link
+        type: string
+      - name: type
+        label: Style
+        type: select
+        options:
+          values: [primary, secondary]
+
+  image:
+    type: object
+    label: Image
+    fields:
+      - name: src
+        label: Image file
+        type: image
+      - name: alt
+        label: Accessibility text
+        type: string
+      - name: width
+        label: Width (pixels)
+        type: number
+        description: Leave blank to size automatically.
+      - name: height
+        label: Height (pixels)
+        type: number
+        description: Leave blank to size automatically.
+
+  section:
+    type: object
+    label: Section
+    fields:
+      - name: type
+        label: Section type
+        type: select
+        options:
+          values: [hero, default]
+      - name: layout
+        label: Layout
+        type: select
+        description: Flex places blocks in a row and adjusts spacing automatically. Grid creates equal columns using the Columns setting.
+        options:
+          values: [flex, grid]
+      - name: cols
+        label: Columns
+        type: select
+        options:
+          values: [1, 2, 3, 4, 5]
+      - name: blocks
+        label: Content blocks
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Block {index}"
+        fields:
+          - name: text
+            label: Text
+            type: rich-text
+          - name: image
+            component: image
+          - name: button
+            component: button
+
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/pages
+    format: yaml-frontmatter
+    exclude:
+      - index.astro
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: ../layouts/ContentLayout.astro
+        hidden: true
+        readonly: true
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: sections
+        label: Page sections
+        component: section
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.type}"
+
+actions:
+  - name: deploy-site
+    label: Deploy to production
+    workflow: pages-cms-deploy.yml
+    ref: current
+    cancelable: false
+    confirm:
+      title: Deploy to production?
+      message: This will validate the editing branch and merge it into main.
+      button: Deploy
+
+settings:
+  content:
+    merge: true

@@ -1,30 +1,76 @@
 ---
-import "../styles/content-layout.css";
 import PageLayout from "./PageLayout.astro";
 import Button from "../components/Button.astro";
-const { frontmatter } = Astro.props;
-const { hero } = frontmatter;
+import ContentBlock from "../components/ContentBlock.astro";
+import ContentSection from "../components/ContentSection.astro";
+import MarkdownContent from "../components/MarkdownContent.astro";
+
+type ButtonData = {
+  href: string;
+  title: string;
+  type?: string;
+};
+
+type ContentBlockData = {
+  text?: string;
+  image?: {
+    src: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  };
+  button?: ButtonData;
+};
+
+type Section = {
+  type: "hero" | "default";
+  layout?: "flex" | "grid";
+  cols?: number;
+  blocks?: ContentBlockData[];
+};
+
+type Frontmatter = {
+  title: string;
+  sections?: Section[];
+};
+
+const { title, sections = [] } =
+  Astro.props.frontmatter as Frontmatter;
 ---
 
-<PageLayout title={`${frontmatter.title} - HST Cultural Arts`}>
-  {
-    hero && (
-      <section class={`content-hero content-hero--${hero.align ?? "left"}`}>
-        <div class="content-hero__inner">
-          <h1>{hero.title ?? frontmatter.title}</h1>
-          {hero.subtitle && <p class="content-hero__subtitle">{hero.subtitle}</p>}
-          {hero.button && (
-            <Button
-              href={hero.button.href}
-              title={hero.button.title}
-              type={hero.button.type ?? "primary"}
+<PageLayout title={`${title} - HST Cultural Arts`}>
+  {sections.map((section) => (
+    <ContentSection
+      type={section.type}
+      layout={section.layout}
+      cols={section.cols}
+    >
+      {section.blocks?.map((block) => (
+        <ContentBlock>
+          {block.text && <MarkdownContent text={block.text} />}
+          {block.image?.src && (
+            <img
+              src={block.image.src}
+              alt={block.image.alt ?? ""}
+              loading="lazy"
+              width={block.image.width}
+              height={block.image.height}
+              style={`
+                ${block.image.width === undefined && block.image.height !== undefined ? "width: auto;" : ""}
+                ${block.image.width !== undefined ? `width: ${block.image.width}px;` : ""}
+                ${block.image.height !== undefined ? `height: ${block.image.height}px;` : ""}
+              `}
             />
           )}
-        </div>
-      </section>
-    )
-  }
-  <article class="content-page">
-    <slot />
-  </article>
+          {block.button && (
+            <Button
+              href={block.button.href}
+              title={block.button.title}
+              type={block.button.type ?? "primary"}
+            />
+          )}
+        </ContentBlock>
+      ))}
+    </ContentSection>
+  ))}
 </PageLayout>
