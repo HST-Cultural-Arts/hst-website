@@ -1,4 +1,4 @@
-name: Sync CMS editing branch
+name: Reset preview branch after publish
 
 on:
   pull_request:
@@ -16,6 +16,7 @@ jobs:
     if: >-
       github.event.pull_request.merged == true &&
       github.event.pull_request.base.ref == 'main' &&
+      github.event.pull_request.head.ref == 'preview' &&
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
 
@@ -26,7 +27,7 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Reset editing branch to deployed main
+      - name: Reset preview branch to deployed main
         env:
           SOURCE_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |

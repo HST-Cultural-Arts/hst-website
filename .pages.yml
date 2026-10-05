@@ -114,14 +114,23 @@ content:
             summary: "{fields.type}"
 
 actions:
+  - name: preview-site
+    label: Preview current edits
+    workflow: pages-cms-preview.yml
+    ref: current
+    cancelable: true
+    confirm:
+      title: Update preview site?
+      message: This will update the preview deployment from the current editing branch. After it finishes, visit https://preview.hstonline.pages.dev
+      button: Preview
   - name: deploy-site
-    label: Deploy to production
+    label: Publish preview to production
     workflow: pages-cms-deploy.yml
     ref: current
-    cancelable: false
+    cancelable: true
     confirm:
       title: Deploy to production?
-      message: This will validate the editing branch and merge it into main.
+      message: This will validate the preview branch and merge it into main. After it finishes, visit https://hstonline.pages.dev
       button: Deploy
 
 settings:
