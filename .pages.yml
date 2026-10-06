@@ -113,6 +113,111 @@ content:
             collapsed: true
             summary: "{fields.type}"
 
+  - name: header
+    label: Header
+    type: file
+    path: src/data/header.json
+    fields:
+      - name: brand
+        label: Brand
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: logo
+            label: Logo
+            type: image
+          - name: logoAlt
+            label: Logo accessibility text
+            type: string
+          - name: tagline
+            label: Tagline
+            type: text
+      - name: navigation
+        label: Navigation
+        type: object
+        fields:
+          - name: navLinks
+            label: Navigation links
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.label}"
+            fields:
+              - name: label
+                label: Label
+                type: string
+              - name: href
+                label: Link
+                type: string
+          - name: ctaLinks
+            label: Call-to-action links
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.label}"
+            fields:
+              - name: label
+                label: Label
+                type: string
+              - name: href
+                label: Link
+                type: string
+
+  - name: footer
+    label: Footer
+    type: file
+    path: src/data/footer.json
+    fields:
+      - name: brand
+        label: Brand
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: logo
+            label: Logo
+            type: image
+          - name: logoAlt
+            label: Logo accessibility text
+            type: string
+          - name: tagline
+            label: Tagline
+            type: text
+      - name: navigation
+        label: Navigation
+        type: object
+        fields:
+          - name: columns
+            label: Footer columns
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.heading}"
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+              - name: links
+                label: Links
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{fields.label}"
+                fields:
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: href
+                    label: Link
+                    type: string
+
 settings:
   content:
     merge: true

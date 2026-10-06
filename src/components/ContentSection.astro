@@ -1,8 +1,11 @@
 ---
 import '../styles/content-section.css';
 const { type, layout, cols } = Astro.props;
+const columnsClass = layout === 'grid' && cols
+    ? `content-section-layout--${cols}cols`
+    : '';
 ---
 
-<section class={`content-section content-section--${type} ${layout ? `content-section-layout--${layout}` : ''} ${cols ? `content-section-layout--${cols}cols` : ''}`}>
+<section class={`content-section content-section--${type} ${layout ? `content-section-layout--${layout}` : ''} ${columnsClass}`}>
     <slot />
 </section>
