@@ -9,15 +9,30 @@
     border-bottom: 2px solid var(--color-border);
 }
 
-.content-section-layout--flex {
+.content-section-layout--auto {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--space-lg);
 }
 
-.content-section-layout--grid {
+.content-section-layout--auto > .content-block {
+    flex: 1 1 20rem;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.content-section-layout--1col,
+.content-section-layout--2cols,
+.content-section-layout--3cols,
+.content-section-layout--4cols,
+.content-section-layout--5cols {
     display: grid;
     gap: var(--space-lg);
+}
+
+.content-section-layout--1col {
+    grid-template-columns: 1fr;
 }
 
 .content-section-layout--2cols {

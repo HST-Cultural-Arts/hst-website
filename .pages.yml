@@ -58,14 +58,9 @@ components:
       - name: layout
         label: Layout
         type: select
-        description: Flex places blocks in a row and adjusts spacing automatically. Grid creates equal columns using the Columns setting.
+        description: Auto uses a flexible wrapping layout. Column options use an equal-width grid.
         options:
-          values: [flex, grid]
-      - name: cols
-        label: Columns
-        type: select
-        options:
-          values: [1, 2, 3, 4, 5]
+          values: [auto, 1col, 2cols, 3cols, 4cols, 5cols]
       - name: blocks
         label: Content blocks
         type: object

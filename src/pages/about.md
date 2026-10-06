@@ -3,16 +3,14 @@ layout: ../layouts/ContentLayout.astro
 title: About
 sections:
   - type: hero
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           # About Us
 
           Helping homeschool students discover confidence through the cultural arts.
   - type: default
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           ## Our Mission

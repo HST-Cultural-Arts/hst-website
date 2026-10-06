@@ -3,16 +3,14 @@ layout: ../layouts/ContentLayout.astro
 title: Contact
 sections:
   - type: hero
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           # Contact
 
           We would love to hear from you.
   - type: default
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           ## Get in Touch

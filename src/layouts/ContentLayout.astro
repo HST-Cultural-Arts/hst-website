@@ -24,8 +24,7 @@ type ContentBlockData = {
 
 type Section = {
   type: "hero" | "default";
-  layout?: "flex" | "grid";
-  cols?: number;
+  layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlockData[];
 };
 
@@ -43,7 +42,6 @@ const { title, sections = [] } =
     <ContentSection
       type={section.type}
       layout={section.layout}
-      cols={section.cols}
     >
       {section.blocks?.map((block) => (
         <ContentBlock>
