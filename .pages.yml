@@ -82,7 +82,116 @@ components:
           - name: button
             component: button
 
+  nav-link:
+    type: object
+    label: Navigation link
+    fields:
+      - name: label
+        label: Label
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        description: Leave empty for plain text (e.g. contact info).
+
 content:
+  - name: site-settings
+    label: Site Settings
+    type: group
+    items:
+      - name: header
+        label: Header
+        type: file
+        path: src/data/header.json
+        format: json
+        fields:
+          - name: brand
+            label: Brand
+            type: object
+            fields:
+              - name: name
+                label: Site name
+                type: string
+                required: true
+              - name: logo
+                label: Logo
+                type: image
+                required: true
+              - name: logoAlt
+                label: Logo accessibility text
+                type: string
+                required: true
+              - name: tagline
+                label: Tagline
+                type: text
+          - name: navigation
+            label: Navigation
+            type: object
+            fields:
+              - name: navLinks
+                label: Navigation links
+                component: nav-link
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{fields.label}"
+              - name: ctaLinks
+                label: Call-to-action links
+                component: nav-link
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{fields.label}"
+      - name: footer
+        label: Footer
+        type: file
+        path: src/data/footer.json
+        format: json
+        fields:
+          - name: brand
+            label: Brand
+            type: object
+            fields:
+              - name: name
+                label: Site name
+                type: string
+                required: true
+              - name: logo
+                label: Logo
+                type: image
+                required: true
+              - name: logoAlt
+                label: Logo accessibility text
+                type: string
+                required: true
+              - name: tagline
+                label: Tagline
+                type: text
+          - name: navigation
+            label: Navigation
+            type: object
+            fields:
+              - name: columns
+                label: Columns
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{fields.heading}"
+                fields:
+                  - name: heading
+                    label: Heading
+                    type: string
+                    required: true
+                  - name: links
+                    label: Items
+                    description: Add a link URL to make the item clickable, or leave it empty for plain text.
+                    component: nav-link
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{fields.label}"
   - name: pages
     label: Pages
     type: collection

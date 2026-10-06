@@ -1,0 +1,39 @@
+{
+  "brand": {
+    "name": "Cultural Arts",
+    "logo": "/assets/brand/HST-logo-white.png",
+    "logoAlt": "HST Cultural Arts",
+    "tagline": "Creating opportunities for homeschool students to discover confidence, creativity, and community through the cultural arts."
+  },
+  "navigation": {
+    "columns": [
+      {
+        "heading": "Explore",
+        "links": [
+          { "label": "Home", "href": "/" },
+          { "label": "About", "href": "/about" },
+          { "label": "Join Us", "href": "/join-us" },
+          { "label": "Support Us", "href": "/support-us" }
+        ]
+      },
+      {
+        "heading": "Programs",
+        "links": [
+          { "label": "Acting", "href": "/programs/acting" },
+          { "label": "Dance", "href": "/programs/dance" },
+          { "label": "Troupes", "href": "/programs/troupes" },
+          { "label": "Tech", "href": "/programs/tech" }
+        ]
+      },
+      {
+        "heading": "Contact",
+        "links": [
+          { "label": "hstalents@gmail.com" },
+          { "label": "240-997-5796" },
+          { "label": "P.O. Box 150" },
+          { "label": "Rockville, MD 20848" }
+        ]
+      }
+    ]
+  }
+}

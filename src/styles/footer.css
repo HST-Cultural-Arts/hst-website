@@ -46,8 +46,7 @@ footer {
     text-transform: uppercase;
 }
 
-.footer__column ul,
-.footer__column address {
+.footer__column ul {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
