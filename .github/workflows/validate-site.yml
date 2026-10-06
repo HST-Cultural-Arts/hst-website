@@ -1,9 +1,9 @@
 name: Validate site
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - preview
   workflow_dispatch:
 
 permissions:
