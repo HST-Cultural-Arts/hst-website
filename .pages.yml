@@ -46,6 +46,20 @@ components:
         type: number
         description: Leave blank to size automatically.
 
+  brand:
+    type: object
+    label: Brand
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: logo
+        label: Logo
+        type: image
+      - name: logoAlt
+        label: Logo accessibility text
+        type: string
+
   section:
     type: object
     label: Section
@@ -114,21 +128,7 @@ content:
     path: src/data/header.json
     fields:
       - name: brand
-        label: Brand
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: logo
-            label: Logo
-            type: image
-          - name: logoAlt
-            label: Logo accessibility text
-            type: string
-          - name: tagline
-            label: Tagline
-            type: text
+        component: brand
       - name: navigation
         label: Navigation
         type: object
@@ -168,21 +168,10 @@ content:
     path: src/data/footer.json
     fields:
       - name: brand
-        label: Brand
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: logo
-            label: Logo
-            type: image
-          - name: logoAlt
-            label: Logo accessibility text
-            type: string
-          - name: tagline
-            label: Tagline
-            type: text
+        component: brand
+      - name: tagline
+        label: Tagline
+        type: text
       - name: navigation
         label: Navigation
         type: object

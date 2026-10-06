@@ -1,6 +1,7 @@
 ---
 import "../styles/footer.css";
 import footerData from "../data/footer.json";
+import Brand from "./Brand.astro";
 
 const currentYear = new Date().getFullYear();
 const { brand, navigation } = footerData;
@@ -9,16 +10,13 @@ const { brand, navigation } = footerData;
 <footer>
   <div class="footer__inner">
     <div class="footer__brand">
-      <a class="footer__logo" href="/">
-        <img
-          src={brand.logo}
-          alt={brand.logoAlt}
-          width="273"
-          height="179"
-        />
-        <h1>{brand.name}</h1>
-      </a>
-      <p>{brand.tagline}</p>
+      <Brand
+        className="footer__logo"
+        name={brand.name}
+        logo={brand.logo}
+        logoAlt={brand.logoAlt}
+      />
+      <p>{footerData.tagline}</p>
     </div>
 
     {navigation.columns.map((column) => (
@@ -27,7 +25,7 @@ const { brand, navigation } = footerData;
         <ul>
           {column.links.map((link) => (
             <li>
-              {link.href ? <a href={link.href}>{link.label}</a> : <span>{link.label}</span>}
+              {"href" in link ? <a href={link.href}>{link.label}</a> : <span>{link.label}</span>}
             </li>
           ))}
         </ul>

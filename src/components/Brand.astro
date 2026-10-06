@@ -1,0 +1,15 @@
+---
+interface Props {
+  name: string;
+  logo: string;
+  logoAlt: string;
+  className?: string;
+}
+
+const { name, logo, logoAlt, className = "" } = Astro.props;
+---
+
+<a class={className} href="/">
+  <img src={logo} alt={logoAlt} width="273" height="179" />
+  <h1>{name}</h1>
+</a>

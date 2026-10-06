@@ -1,15 +1,18 @@
 ---
 import '../styles/header.css';
 import headerData from '../data/header.json';
+import Brand from './Brand.astro';
 
 const { brand, navigation } = headerData;
 ---
 
 <header>
-    <a class="brand" href="/">
-        <img src={brand.logo} alt={brand.logoAlt} width="273" height="179">
-        <h1>{brand.name}</h1>
-    </a>
+    <Brand
+        className="brand"
+        name={brand.name}
+        logo={brand.logo}
+        logoAlt={brand.logoAlt}
+    />
     <nav class="nav-links">
         <ul>
             {navigation.navLinks.map((link) => (
