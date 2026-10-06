@@ -1,0 +1,19 @@
+{
+  "brand": {
+    "name": "Cultural Arts",
+    "logo": "/assets/brand/HST-logo-white.png",
+    "logoAlt": "HST Cultural Arts",
+    "tagline": "Creating opportunities for homeschool students to discover confidence, creativity, and community through the cultural arts."
+  },
+  "navigation": {
+    "navLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "ctaLinks": [
+      { "label": "Support Us", "href": "/support-us" },
+      { "label": "Join Us", "href": "/join-us" }
+    ]
+  }
+}

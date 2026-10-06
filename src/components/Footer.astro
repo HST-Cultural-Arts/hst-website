@@ -1,21 +1,9 @@
 ---
 import "../styles/footer.css";
+import footerData from "../data/footer.json";
 
 const currentYear = new Date().getFullYear();
-
-const column1Links = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Join Us", href: "/join-us" },
-  { name: "Support Us", href: "/support-us" },
-];
-
-const column2Links = [
-  { name: "Acting", href: "/programs/acting" },
-  { name: "Dance", href: "/programs/dance" },
-  { name: "Choir", href: "/programs/choir" },
-  { name: "Tech", href: "/programs/tech" },
-];
+const { brand, navigation } = footerData;
 ---
 
 <footer>
@@ -23,53 +11,28 @@ const column2Links = [
     <div class="footer__brand">
       <a class="footer__logo" href="/">
         <img
-          src="/assets/brand/HST-logo-white.png"
-          alt="HST Cultural Arts"
+          src={brand.logo}
+          alt={brand.logoAlt}
           width="273"
           height="179"
         />
-        <h1>Cultural Arts</h1>
+        <h1>{brand.name}</h1>
       </a>
-      <p>
-        Creating opportunities for homeschool students to discover confidence,
-        creativity, and community through the cultural arts.
-      </p>
+      <p>{brand.tagline}</p>
     </div>
 
-    <nav class="footer__column" aria-label="Explore">
-      <h2>Explore</h2>
-      <ul>
-        {
-          column1Links.map((link) => (
+    {navigation.columns.map((column) => (
+      <nav class="footer__column" aria-label={column.heading}>
+        <h2>{column.heading}</h2>
+        <ul>
+          {column.links.map((link) => (
             <li>
-              <a href={link.href}>{link.name}</a>
+              {link.href ? <a href={link.href}>{link.label}</a> : <span>{link.label}</span>}
             </li>
-          ))
-        }
-      </ul>
-    </nav>
-
-    <nav class="footer__column" aria-label="Programs">
-      <h2>Programs</h2>
-      <ul>
-        {
-          column2Links.map((link) => (
-            <li>
-              <a href={link.href}>{link.name}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-
-    <div class="footer__column">
-      <h2>Contact</h2>
-      <address>
-        <span>hstalents@gmail.com</span>
-        <span>240-997-5796</span>
-        <span>P.O. Box 150<br />Rockville, MD 20848</span>
-      </address>
-    </div>
+          ))}
+        </ul>
+      </nav>
+    ))}
   </div>
 
   <div class="footer__bottom">

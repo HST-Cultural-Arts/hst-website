@@ -1,33 +1,29 @@
 ---
 import '../styles/header.css';
-const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-];
+import headerData from '../data/header.json';
 
-const ctaLinks = [
-    { name: 'Support Us', href: '/support-us' },
-    { name: 'Join Us', href: '/join-us' },
-];
+const { brand, navigation } = headerData;
 ---
 
 <header>
-    <a class="brand" href="/"><img src="/assets/brand/HST-logo-white.png" alt="HST Cultural Arts" width="273" height="179"> <h1> Cultural Arts</h1></a>
+    <a class="brand" href="/">
+        <img src={brand.logo} alt={brand.logoAlt} width="273" height="179">
+        <h1>{brand.name}</h1>
+    </a>
     <nav class="nav-links">
         <ul>
-            {navLinks.map((link) => (
+            {navigation.navLinks.map((link) => (
                 <li>
-                    <a href={link.href}>{link.name}</a>
+                    <a href={link.href}>{link.label}</a>
                 </li>
             ))}
         </ul>
     </nav>
     <nav class="cta-links">
         <ul>
-            {ctaLinks.map((cta) => (
+            {navigation.ctaLinks.map((cta) => (
                 <li>
-                    <a href={cta.href}>{cta.name}</a>
+                    <a href={cta.href}>{cta.label}</a>
                 </li>
             ))}
         </ul>
