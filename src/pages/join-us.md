@@ -3,24 +3,21 @@ layout: ../layouts/ContentLayout.astro
 title: Join Us
 sections:
   - type: hero
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           # Join Us
 
           Explore your creativity, make new friends, and grow your confidence.
   - type: default
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           ## Get Involved
 
           HST welcomes students who want to explore performance, make new friends, and grow their confidence.
   - type: default
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           ## Find Your Place

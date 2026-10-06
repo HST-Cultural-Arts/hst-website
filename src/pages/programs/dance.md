@@ -3,16 +3,14 @@ layout: ../../layouts/ContentLayout.astro
 title: Dance
 sections:
   - type: hero
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           # Dance
 
           We offer many dance classes at several levels starting at age 9 and going through high school. All dance students participate in our year end Showcase performance along with our acting and choir students.
   - type: default
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           All dance classes are held at:

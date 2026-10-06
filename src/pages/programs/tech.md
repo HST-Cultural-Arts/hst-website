@@ -3,16 +3,14 @@ layout: ../../layouts/ContentLayout.astro
 title: Tech
 sections:
   - type: hero
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           # Tech
 
           Our tech program is available for those who want to learn more about working behind the scenes. We offer workshops and classes that prepare your student to work backstage for one of our troupe or Showcase performances.
   - type: default
-    layout: flex
-    cols: 1
+    layout: auto
     blocks:
       - text: |
           ## Tech Classes and Workshops
