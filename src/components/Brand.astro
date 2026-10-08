@@ -1,4 +1,6 @@
 ---
+import "../styles/brand.css";
+
 interface Props {
   name: string;
   logo: string;
@@ -9,7 +11,7 @@ interface Props {
 const { name, logo, logoAlt, className = "" } = Astro.props;
 ---
 
-<a class={className} href="/">
+<a class:list={["brand", className]} href="/">
   <img src={logo} alt={logoAlt} width="273" height="179" />
   <h1>{name}</h1>
 </a>
