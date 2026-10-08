@@ -27,10 +27,14 @@ sections:
           - Theater rental fees
           - Other expenses to keep HST running smoothly
   - type: light
-    layout: auto
+    layout: 1col
     blocks:
       - button:
           title: Donate Now
           href: https://www.paypal.com/donate/?hosted_button_id=D4Z4LCKWX2RTC
+          type: primary
+      - button:
+          title: View Past Donors
+          href: /donors
           type: primary
 ---
