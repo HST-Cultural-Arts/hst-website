@@ -2,14 +2,14 @@
 layout: ../../layouts/ContentLayout.astro
 title: Tech
 sections:
-  - type: dark
+  - color: dark
     layout: auto
     blocks:
       - text: |
           # Tech
 
           Our tech program is available for those who want to learn more about working behind the scenes. We offer workshops and classes that prepare your student to work backstage for one of our troupe or Showcase performances.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |

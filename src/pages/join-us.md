@@ -2,21 +2,21 @@
 layout: ../layouts/ContentLayout.astro
 title: Join Us
 sections:
-  - type: dark
+  - color: dark
     layout: auto
     blocks:
       - text: |
           # Join Us
 
           Explore your creativity, make new friends, and grow your confidence.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |
           ## Get Involved
 
           HST welcomes students who want to explore performance, make new friends, and grow their confidence.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |

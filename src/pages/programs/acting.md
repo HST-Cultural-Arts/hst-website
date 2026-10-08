@@ -2,14 +2,14 @@
 layout: ../../layouts/ContentLayout.astro
 title: Acting
 sections:
-  - type: dark
+  - color: dark
     layout: auto
     blocks:
       - text: |
           # Acting
 
           Our Acting A and B classes are your first step into acting here at HST. These classes meet on Friday morning from 10:00 – 12:00. At least one year of acting is required before you are able to audition for one of our Acting Troupes.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |

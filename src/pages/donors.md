@@ -3,14 +3,14 @@
 layout: ../layouts/ContentLayout.astro
 title: Silent Auction Donors
 sections:
-  - type: dark
+  - color: dark
     layout: auto
     blocks:
       - text: |
           # 2024–25 Silent Auction Donors
 
           HST thanks our 2024–25 Silent Auction Donors.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |
