@@ -2,14 +2,14 @@
 layout: ../layouts/ContentLayout.astro
 title: Contact
 sections:
-  - type: hero
+  - type: dark
     layout: auto
     blocks:
       - text: |
           # Contact
 
           We would love to hear from you.
-  - type: default
+  - type: light
     layout: auto
     blocks:
       - text: |
