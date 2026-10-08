@@ -3,6 +3,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 import ContentSection from "../components/ContentSection.astro";
 import Button from "../components/Button.astro";
 import ContentBlock from "../components/ContentBlock.astro";
+import Image from "../components/Image.astro";
 ---
 
 <PageLayout title="Home - HST Cultural Arts">
@@ -21,11 +22,11 @@ import ContentBlock from "../components/ContentBlock.astro";
       <Button href="/about" title="Learn More" type="primary" />
     </ContentBlock>
     <ContentBlock>
-      <img
+      <Image
         src="/assets/brand/HST-logo-white-on-black.png"
         alt="HST Cultural Arts logo"
-        width="273"
-        height="179"
+        size="medium"
+        crop="natural"
         loading="lazy"
       />
     </ContentBlock>
