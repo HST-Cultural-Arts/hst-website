@@ -2,14 +2,14 @@
 layout: ../layouts/ContentLayout.astro
 title: About
 sections:
-  - type: dark
+  - color: dark
     layout: auto
     blocks:
       - text: |
           # About Us
 
           Helping homeschool students discover confidence through the cultural arts.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |

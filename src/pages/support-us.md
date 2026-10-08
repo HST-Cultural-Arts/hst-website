@@ -2,21 +2,21 @@
 layout: ../layouts/ContentLayout.astro
 title: Support Us
 sections:
-  - type: dark
+  - color: dark
     layout: auto
     blocks:
       - text: |
           # Support Us
 
           Your support helps make arts education available to more children.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |
           ## Make a Difference
 
           Your support helps make arts education available to more children in our community.
-  - type: light
+  - color: light
     layout: auto
     blocks:
       - text: |
@@ -26,7 +26,7 @@ sections:
           - Safe rehearsal spaces
           - Theater rental fees
           - Other expenses to keep HST running smoothly
-  - type: light
+  - color: light
     layout: 1col
     blocks:
       - button:

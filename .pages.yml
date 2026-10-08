@@ -68,11 +68,11 @@ components:
     type: object
     label: Section
     fields:
-      - name: type
-        label: Section type
+      - name: color
+        label: Section color
         type: select
         options:
-          values: [hero, default]
+          values: [dark, light]
       - name: layout
         label: Layout
         type: select

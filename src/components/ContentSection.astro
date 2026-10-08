@@ -1,6 +1,6 @@
 ---
 import '../styles/content-section.css';
-const { type = 'light', layout = 'auto' } = Astro.props;
+const { color = 'light', layout = 'auto' } = Astro.props;
 const layoutClass = layout === 'auto'
     ? 'content-section-layout--auto'
     : layout
@@ -8,6 +8,6 @@ const layoutClass = layout === 'auto'
         : '';
 ---
 
-<section class={`content-section content-section--${type} ${layoutClass}`}>
+<section class={`content-section content-section--${color} ${layoutClass}`}>
     <slot />
 </section>
