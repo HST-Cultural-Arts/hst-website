@@ -7,25 +7,6 @@ header {
     border-bottom: 2px solid var(--color-border-inverse);
 }
 
-header h1 {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    color: var(--color-text-inverse);
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-}
-
-header .brand {
-    display: flex;
-    align-items: center;
-}
-
-header .brand img {
-    height: 50px;
-    width: auto;
-}
-
 header nav {
     display: flex;
     align-items: center;
