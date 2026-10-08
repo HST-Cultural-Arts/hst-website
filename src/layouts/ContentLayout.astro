@@ -3,7 +3,8 @@ import PageLayout from "./PageLayout.astro";
 import Button from "../components/Button.astro";
 import ContentBlock from "../components/ContentBlock.astro";
 import ContentSection from "../components/ContentSection.astro";
-import MarkdownContent from "../components/MarkdownContent.astro";
+import Image from "../components/Image.astro";
+import Markdown from "../components/Markdown.astro";
 
 type ButtonData = {
   href: string;
@@ -16,8 +17,8 @@ type ContentBlockData = {
   image?: {
     src: string;
     alt?: string;
-    width?: number;
-    height?: number;
+    size?: "small" | "medium" | "large" | "full";
+    crop?: "natural" | "landscape" | "square" | "portrait";
   };
   button?: ButtonData;
 };
@@ -45,19 +46,13 @@ const { title, sections = [] } =
     >
       {section.blocks?.map((block) => (
         <ContentBlock>
-          {block.text && <MarkdownContent text={block.text} />}
+          {block.text && <Markdown text={block.text} />}
           {block.image?.src && (
-            <img
+            <Image
               src={block.image.src}
               alt={block.image.alt ?? ""}
-              loading="lazy"
-              width={block.image.width}
-              height={block.image.height}
-              style={`
-                ${block.image.width === undefined && block.image.height !== undefined ? "width: auto;" : ""}
-                ${block.image.width !== undefined ? `width: ${block.image.width}px;` : ""}
-                ${block.image.height !== undefined ? `height: ${block.image.height}px;` : ""}
-              `}
+              size={block.image.size}
+              crop={block.image.crop}
             />
           )}
           {block.button && (

@@ -37,14 +37,18 @@ components:
       - name: alt
         label: Accessibility text
         type: string
-      - name: width
-        label: Width (pixels)
-        type: number
-        description: Leave blank to size automatically.
-      - name: height
-        label: Height (pixels)
-        type: number
-        description: Leave blank to size automatically.
+      - name: size
+        label: Display size
+        type: select
+        description: Controls the image's maximum width while keeping it responsive.
+        options:
+          values: [small, medium, large, full]
+      - name: crop
+        label: Crop
+        type: select
+        description: Natural preserves the complete image. Other options crop it to a consistent frame.
+        options:
+          values: [natural, landscape, square, portrait]
 
   brand:
     type: object
