@@ -1,13 +1,9 @@
 ---
-import '../styles/content-section.css';
-const { color = 'light', layout = 'auto' } = Astro.props;
-const layoutClass = layout === 'auto'
-    ? 'content-section-layout--auto'
-    : layout
-        ? `content-section-layout--${layout}`
-        : '';
+import "../styles/content-section.css";
+import "../styles/timeline.css";
+const { color = "light", layout = "auto" } = Astro.props;
 ---
 
-<section class={`content-section content-section--${color} ${layoutClass}`}>
-    <slot />
+<section class={`content-section content-section--${color} ${layout}`}>
+  <slot />
 </section>
