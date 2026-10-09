@@ -23,7 +23,7 @@ type Section = {
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlock[];
   years?: Array<{
-    year: number;
+    year: number | string;
     blocks?: Array<{
       block?: ContentBlock[];
     }>;

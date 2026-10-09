@@ -1,5 +1,5 @@
 ---
-import ContentBlock from "../ContentBlock.astro";
+import ContentBlock from "./ContentBlock.astro";
 
 type ContentBlockData = {
   text?: string;
@@ -21,7 +21,7 @@ type TimelineCard = {
 };
 
 type TimelineYear = {
-  year: number;
+  year: number | string;
   blocks?: TimelineCard[];
 };
 
@@ -39,7 +39,7 @@ const { years = [] } = Astro.props as {
 
       {year.blocks?.length ? (
         <div class="timeline__entries">
-        {year.blocks.map((card, cardIndex) => (
+          {year.blocks.map((card, cardIndex) => (
             <article
               class:list={[
                 "timeline__card",
@@ -48,7 +48,7 @@ const { years = [] } = Astro.props as {
                   : "timeline__card--right",
               ]}
             >
-            {card.block?.map((block) => <ContentBlock block={block} />)}
+              {card.block?.map((block) => <ContentBlock block={block} />)}
             </article>
           ))}
         </div>
