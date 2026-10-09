@@ -23,7 +23,7 @@ sections:
                       ### Cinderella (Senior Troupe)
                   - type: image
                     image:
-                      src: /assets/uploads/timeline/2026/SR - Cinderella/IMG_7371.webp
+                      src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7371.webp
                       alt: Placeholder (Senior Troupe)
                   - type: button
                     button:
@@ -35,7 +35,7 @@ sections:
                       ### Two Noble Kinsmen (Shakespeare Troupe)
                   - type: image
                     image:
-                      src: /assets/uploads/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
+                      src: /assets/uploads/images/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
                       alt: Placeholder (Shakespeare Troupe)
                   - type: button
                     button:
@@ -47,7 +47,7 @@ sections:
                       ### Surf's Up (Junior Troupe)
                   - type: image
                     image:
-                      src: /assets/uploads/timeline/2026/JR - Surf_s Up/IMG_6845.webp
+                      src: /assets/uploads/images/timeline/2026/JR - Surf_s Up/IMG_6845.webp
                       alt: Placeholder (Junior Troupe)
                   - type: button
                     button:
@@ -59,7 +59,7 @@ sections:
                       ### Peter Pan (Gaithersburg Troupe)
                   - type: image
                     image:
-                      src: /assets/uploads/timeline/2026/GB - Peter Pan/IMG_5839.webp
+                      src: /assets/uploads/images/timeline/2026/GB - Peter Pan/IMG_5839.webp
                       alt: Placeholder (Gaithersburg Troupe)
                   - type: button
                     button:
