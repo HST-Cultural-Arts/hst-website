@@ -111,6 +111,9 @@ components:
         type: select
         options:
           values: [dark, light]
+      - name: heading
+        label: Section heading
+        type: string
       - name: layout
         label: Layout
         type: select
@@ -179,9 +182,6 @@ components:
                         collapsed: true
                         summary: "Block {index}"
                     fields:
-                      - name: href
-                        label: Page link
-                        type: string
                       - name: block
                         label: Block content
                         type: block

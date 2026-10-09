@@ -29,7 +29,6 @@ type ContentBlock = {
   years?: Array<{
     year: number | string;
     blocks?: Array<{
-      href?: string;
       block?: ContentBlock[];
     }>;
   }>;
@@ -37,6 +36,7 @@ type ContentBlock = {
 
 type Section = {
   color: "dark" | "light";
+  heading?: string;
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlock[];
 };
@@ -55,6 +55,7 @@ const { title, sections = [] } = frontmatter;
     sections.map((section) => (
       <ContentSection
         color={section.color}
+        heading={section.heading}
         layout={section.layout}
         blocks={section.blocks}
       />

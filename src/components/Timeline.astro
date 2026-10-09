@@ -18,7 +18,6 @@ type ContentBlockData = {
 };
 
 type TimelineCard = {
-  href?: string;
   block?: ContentBlockData[];
 };
 
@@ -50,13 +49,9 @@ const { years = [] } = Astro.props as {
                   : "timeline__card--right",
               ]}
             >
-              {card.href ? (
-                <a href={card.href} class="timeline__card-link">
-                  {card.block?.map((block) => <ContentBlock block={block} />)}
-                </a>
-              ) : (
-                card.block?.map((block) => <ContentBlock block={block} />)
-              )}
+              <ContentBlock variant="card">
+                {card.block?.map((block) => <ContentBlock block={block} />)}
+              </ContentBlock>
             </article>
           ))}
         </div>

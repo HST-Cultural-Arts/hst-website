@@ -17,8 +17,7 @@ sections:
         years:
           - year: 2026
             blocks:
-              - href: /timeline/2026/sr-cinderella/
-                block:
+              - block:
                   - type: text
                     text: |
                       ### Cinderella (Senior Troupe)
@@ -26,8 +25,11 @@ sections:
                     image:
                       src: /assets/uploads/timeline/2026/SR - Cinderella/IMG_7371.webp
                       alt: Placeholder (Senior Troupe)
-              - href: /timeline/2026/sh-two-noble-kinsmen/
-                block:
+                  - type: button
+                    button:
+                      title: View Cinderella gallery
+                      href: /timeline/2026/sr-cinderella/
+              - block:
                   - type: text
                     text: |
                       ### Two Noble Kinsmen (Shakespeare Troupe)
@@ -35,8 +37,11 @@ sections:
                     image:
                       src: /assets/uploads/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
                       alt: Placeholder (Shakespeare Troupe)
-              - href: /timeline/2026/jr-surfs-up/
-                block:
+                  - type: button
+                    button:
+                      title: View Two Noble Kinsmen gallery
+                      href: /timeline/2026/sh-two-noble-kinsmen/
+              - block:
                   - type: text
                     text: |
                       ### Surf's Up (Junior Troupe)
@@ -44,8 +49,11 @@ sections:
                     image:
                       src: /assets/uploads/timeline/2026/JR - Surf_s Up/IMG_6845.webp
                       alt: Placeholder (Junior Troupe)
-              - href: /timeline/2026/gb-peter-pan/
-                block:
+                  - type: button
+                    button:
+                      title: View Surf's Up gallery
+                      href: /timeline/2026/jr-surfs-up/
+              - block:
                   - type: text
                     text: |
                       ### Peter Pan (Gaithersburg Troupe)
@@ -53,5 +61,9 @@ sections:
                     image:
                       src: /assets/uploads/timeline/2026/GB - Peter Pan/IMG_5839.webp
                       alt: Placeholder (Gaithersburg Troupe)
+                  - type: button
+                    button:
+                      title: View Peter Pan gallery
+                      href: /timeline/2026/gb-peter-pan/
           - year: 1995 (HST's Beginning)
 ---

@@ -48,13 +48,14 @@ type ContentBlockData = {
   years?: TimelineYear[];
 };
 
-const { block, className = "" } = Astro.props as {
+const { block, className = "", variant = "transparent" } = Astro.props as {
   block?: ContentBlockData;
   className?: string;
+  variant?: "transparent" | "card";
 };
 ---
 
-<section class:list={["content-block", className]}>
+<section class:list={["content-block", `content-block--${variant}`, className]}>
   {block ? (
     <>
       {block.text && <Markdown text={block.text} />}

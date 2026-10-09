@@ -33,4 +33,50 @@ import Image from "../components/Image.astro";
       />
     </ContentBlock>
   </ContentSection>
+  <ContentSection heading="Our Programs" layout="2cols">
+    <ContentBlock variant="card">
+      <h3>Acting</h3>
+      <Image
+        src="/assets/uploads/homepage/acting.webp"
+        alt="Students performing in an acting production"
+        size="full"
+        crop="landscape"
+        loading="lazy"
+      />
+      <Button href="/programs/acting" title="Learn about Acting" type="primary" />
+    </ContentBlock>
+    <ContentBlock variant="card">
+      <h3>Dance</h3>
+      <Image
+        src="/assets/uploads/homepage/dance.webp"
+        alt="Students performing a dance routine"
+        size="full"
+        crop="landscape"
+        loading="lazy"
+      />
+      <Button href="/programs/dance" title="Learn about Dance" type="primary" />
+    </ContentBlock>
+    <ContentBlock variant="card">
+      <h3>Tech</h3>
+      <Image
+        src="/assets/uploads/homepage/tech.webp"
+        alt="Students working on tech"
+        size="full"
+        crop="landscape"
+        loading="lazy"
+      />
+      <Button href="/programs/tech" title="Learn about Tech" type="primary" />
+    </ContentBlock>
+    <ContentBlock variant="card">
+      <h3>Troupes</h3>
+      <Image
+        src="/assets/uploads/homepage/troupes.webp"
+        alt="HST student troupe members performing together"
+        size="full"
+        crop="landscape"
+        loading="lazy"
+      />
+      <Button href="/programs/troupes" title="Learn about Troupes" type="primary" />
+    </ContentBlock>
+  </ContentSection>
 </PageLayout>

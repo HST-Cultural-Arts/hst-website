@@ -9,6 +9,15 @@
     border-bottom: 2px solid var(--color-border);
 }
 
+.content-section__heading {
+    width: 100%;
+    margin: 0;
+}
+
+.content-section__blocks {
+    width: 100%;
+}
+
 .content-section-layout--auto {
     display: flex;
     flex-direction: row;
@@ -51,11 +60,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.content-section > h1,
-.content-section > h2,
-.content-section > h3,
-.content-section > h4,
-.content-section > p {
+.content-section__blocks h1,
+.content-section__blocks h2,
+.content-section__blocks h3,
+.content-section__blocks h4,
+.content-section__blocks p {
     margin: 0;
 }
 
