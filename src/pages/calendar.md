@@ -10,7 +10,18 @@ sections:
 
           See what is happening with HST!
   - color: light
+    layout: 1col
     blocks:
+      - type: button
+        button:
+            href: ../uploads/calendar/26-27-Key-Dates-Calendar.docx.pdf
+            title: 2026-2027 Key Dates Calendar
+            type: primary
+      - type: button
+        button:
+          href: ../uploads/calendar/2027-Theatre-Schedule.docx.pdf
+          title: 2026-2027 Theatre Schedule
+          type: primary
       - type: embed
         embed:
           provider: calendar
