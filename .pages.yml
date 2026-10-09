@@ -18,12 +18,15 @@ components:
       - name: title
         label: Text
         type: string
+        required: true
       - name: href
         label: Link
         type: string
+        required: true
       - name: type
         label: Style
         type: select
+        default: primary
         options:
           values: [primary, secondary]
 
@@ -34,6 +37,7 @@ components:
       - name: src
         label: Image file
         type: image
+        required: true
         description: >
           Please convert images to WebP before uploading to reduce file size.
           Use https://localconvert.com/convert/image/ to convert images
@@ -41,15 +45,18 @@ components:
       - name: alt
         label: Accessibility text
         type: string
+        description: Describe the image for screen readers. Leave blank only for decorative images.
       - name: size
         label: Display size
         type: select
+        default: medium
         description: Controls the image's maximum width while keeping it responsive.
         options:
           values: [small, medium, large, full]
       - name: crop
         label: Crop
         type: select
+        default: natural
         description: Natural preserves the complete image. Other options crop it to a consistent frame.
         options:
           values: [natural, landscape, square, portrait]
@@ -61,12 +68,16 @@ components:
       - name: name
         label: Name
         type: string
+        required: true
       - name: logo
         label: Logo
         type: image
+        required: true
       - name: logoAlt
         label: Logo accessibility text
         type: string
+        required: true
+        description: Describe the logo for screen readers.
 
   text:
     type: object
@@ -75,6 +86,8 @@ components:
       - name: text
         label: Text
         type: rich-text
+        required: true
+        description: Add formatted text, headings, links, or lists.
 
   embed:
     type: object
@@ -83,22 +96,29 @@ components:
       - name: provider
         label: Provider
         type: select
+        required: true
         options:
           values: [calendar, youtube]
       - name: src
         label: Embed URL
         type: string
+        required: true
+        description: Use the provider's HTTPS embed URL, not the regular page URL.
       - name: title
         label: Accessibility title
         type: string
+        required: true
+        description: Briefly describe what the embedded content is.
       - name: size
         label: Display size
         type: select
+        default: large
         options:
           values: [small, medium, large, full]
       - name: height
         label: Viewport height
         type: select
+        description: Controls the embed's vertical space. Leave blank to use the default.
         options:
           values: [short, medium, tall]
 
@@ -109,20 +129,26 @@ components:
       - name: color
         label: Section color
         type: select
+        required: true
+        default: light
         options:
           values: [dark, light]
+        description: The color of the section, dark or light.
       - name: heading
         label: Section heading
         type: string
+        description: (Optional) The heading for the section. Useful for grid layouts where you want a main section heading.
       - name: layout
         label: Layout
         type: select
+        default: auto
         description: Auto uses a flexible wrapping layout. Column options use an equal-width grid.
         options:
           values: [auto, 1col, 2cols, 3cols, 4cols, 5cols]
       - name: blocks
         label: Content blocks
         type: block
+        description: Add content blocks and choose each block's type.
         list:
           collapsible:
             collapsed: true
@@ -130,9 +156,11 @@ components:
         blockKey: type
         blocks:
           - name: text
+            label: Text block
             component: text
           - name: image
             label: Image block
+            description: Display one image.
             fields:
               - name: image
                 component: image
@@ -142,13 +170,16 @@ components:
               - name: button
                 component: button
           - name: embed
+            label: Embed block
             component: embed
           - name: gallery
             label: Gallery block
+            description: Display multiple images as a slideshow gallery.
             fields:
               - name: gallery
                 label: Gallery images
                 type: object
+                description: Add one or more images. Include accessibility text whenever possible.
                 list:
                   collapsible:
                     collapsed: true
@@ -157,15 +188,19 @@ components:
                   - name: src
                     label: Image file
                     type: image
+                    required: true
                   - name: alt
                     label: Accessibility text
                     type: string
+                    description: Describe the image for screen readers. Leave blank only for decorative images.
           - name: timeline
             label: Timeline block
+            description: Display dated entries with text, images, buttons, or embeds.
             fields:
               - name: years
                 label: Timeline years
                 type: object
+                description: Add a year or milestone. A year may stand alone without entries.
                 list:
                   collapsible:
                     collapsed: true
@@ -173,17 +208,20 @@ components:
                 fields:
                   - name: year
                     label: Year
-                    type: number
+                    type: string
+                    required: true
+                    description: Enter a year or milestone label, such as "1995 (HST's Beginning)".
                   - name: blocks
-                    label: Timeline blocks
+                    label: Timeline entries
                     type: object
+                    description: Optional entries belonging to this year.
                     list:
                       collapsible:
                         collapsed: true
-                        summary: "Block {index}"
+                        summary: "Entry {index}"
                     fields:
                       - name: block
-                        label: Block content
+                        label: Entry content
                         type: block
                         list:
                           collapsible:
@@ -192,6 +230,7 @@ components:
                         blockKey: type
                         blocks:
                           - name: text
+                            label: Text block
                             component: text
                           - name: image
                             label: Image block
@@ -204,6 +243,7 @@ components:
                               - name: button
                                 component: button
                           - name: embed
+                            label: Embed block
                             component: embed
 content:
   - name: pages
@@ -228,9 +268,11 @@ content:
         label: Page title
         type: string
         required: true
+        description: The page title shown in the browser and page heading.
       - name: sections
         label: Page sections
         component: section
+        description: Add optional sections to build the page from content blocks.
         list:
           collapsible:
             collapsed: true
@@ -258,9 +300,11 @@ content:
               - name: label
                 label: Label
                 type: string
+                required: true
               - name: href
                 label: Link
                 type: string
+                required: true
           - name: ctaLinks
             label: Call-to-action links
             type: object
@@ -272,9 +316,11 @@ content:
               - name: label
                 label: Label
                 type: string
+                required: true
               - name: href
                 label: Link
                 type: string
+                required: true
 
   - name: footer
     label: Footer
@@ -286,6 +332,7 @@ content:
       - name: tagline
         label: Tagline
         type: text
+        required: true
       - name: navigation
         label: Navigation
         type: object
@@ -301,6 +348,7 @@ content:
               - name: heading
                 label: Heading
                 type: string
+                required: true
               - name: links
                 label: Links
                 type: object
@@ -312,9 +360,11 @@ content:
                   - name: label
                     label: Label
                     type: string
+                    required: true
                   - name: href
                     label: Link
                     type: string
+                    required: true
 
 settings:
   content:
