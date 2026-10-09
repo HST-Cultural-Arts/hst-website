@@ -23,7 +23,7 @@ sections:
                   ### Cinderella (Senior Troupe)
               - type: image
                 image:
-                  src: /uploads/timeline/2026/SR - Cinderella/IMG_7371.webp
+                  src: /assets/uploads/timeline/2026/SR - Cinderella/IMG_7371.webp
                   alt: Placeholder (Senior Troupe)
           - href: /timeline/2026/sh-two-noble-kinsmen/
             block:
@@ -32,7 +32,7 @@ sections:
                   ### Two Noble Kinsmen (Shakespeare Troupe)
               - type: image
                 image:
-                  src: /uploads/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
+                  src: /assets/uploads/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
                   alt: Placeholder (Shakespeare Troupe)
           - href: /timeline/2026/jr-surfs-up/
             block:
@@ -41,7 +41,7 @@ sections:
                   ### Surf's Up (Junior Troupe)
               - type: image
                 image:
-                  src: /uploads/timeline/2026/JR - Surf_s Up/IMG_6845.webp
+                  src: /assets/uploads/timeline/2026/JR - Surf_s Up/IMG_6845.webp
                   alt: Placeholder (Junior Troupe)
           - href: /timeline/2026/gb-peter-pan/
             block:
@@ -50,7 +50,7 @@ sections:
                   ### Peter Pan (Gaithersburg Troupe)
               - type: image
                 image:
-                  src: /uploads/timeline/2026/GB - Peter Pan/IMG_5839.webp
+                  src: /assets/uploads/timeline/2026/GB - Peter Pan/IMG_5839.webp
                   alt: Placeholder (Gaithersburg Troupe)
       - year: 1995 (HST's Beginning)
 ---

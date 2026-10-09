@@ -14,12 +14,12 @@ sections:
     blocks:
       - type: button
         button:
-            href: ../uploads/calendar/26-27-Key-Dates-Calendar.docx.pdf
+            href: ../assets/uploads/calendar/26-27-Key-Dates-Calendar.docx.pdf
             title: 2026-2027 Key Dates Calendar
             type: primary
       - type: button
         button:
-          href: ../uploads/calendar/2027-Theatre-Schedule.docx.pdf
+          href: ../assets/uploads/calendar/2027-Theatre-Schedule.docx.pdf
           title: 2026-2027 Theatre Schedule
           type: primary
       - type: embed
