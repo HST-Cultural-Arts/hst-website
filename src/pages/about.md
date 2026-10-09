@@ -5,14 +5,16 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # About Us
 
           Helping homeschool students discover confidence through the cultural arts.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           ## Our Mission
 
           HST’s mission is to provide training in the cultural arts to homeschool students and to make wholesome family entertainment accessible and affordable to the community. We achieve this mission by hiring professional instructors who teach in a positive, Christian-principled environment where each student is valued.

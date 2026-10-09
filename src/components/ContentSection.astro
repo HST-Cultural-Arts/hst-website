@@ -1,7 +1,46 @@
 ---
 import "../styles/content-section.css";
 import "../styles/timeline.css";
-const { color = "light", type = "default", layout = "auto" } = Astro.props;
+import ContentBlock from "./ContentBlock.astro";
+import Timeline from "./timeline/Timeline.astro";
+
+type ContentBlockData = {
+  text?: string;
+  image?: {
+    src: string;
+    alt?: string;
+    size?: "small" | "medium" | "large" | "full";
+    crop?: "natural" | "landscape" | "square" | "portrait";
+  };
+  button?: {
+    href: string;
+    title: string;
+    type?: string;
+  };
+};
+
+type TimelineYearData = {
+  year: number;
+  blocks?: Array<{
+    block?: ContentBlockData[];
+  }>;
+};
+
+type Props = {
+  color?: string;
+  type?: string;
+  layout?: string;
+  blocks?: ContentBlockData[];
+  years?: TimelineYearData[];
+};
+
+const {
+  color = "light",
+  type = "default",
+  layout = "auto",
+  blocks = [],
+  years = [],
+} = Astro.props as Props;
 ---
 
 <section
@@ -12,5 +51,10 @@ const { color = "light", type = "default", layout = "auto" } = Astro.props;
     `content-section-layout--${layout}`,
   ]}
 >
+  {type === "timeline" && <Timeline years={years} />}
+
+  {type === "default" && blocks.length > 0 &&
+    blocks.map((block) => <ContentBlock block={block} />)
+  }
   <slot />
 </section>

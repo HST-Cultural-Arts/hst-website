@@ -5,14 +5,16 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # Contact
 
           We would love to hear from you.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           ## Get in Touch
 
           **Email:** hstalents@gmail.com

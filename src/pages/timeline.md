@@ -5,7 +5,8 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: >-
+      - type: text
+        text: |
           # Timeline
 
 
@@ -16,29 +17,40 @@ sections:
   - color: light
     type: timeline
     layout: 1col
-    blocks:
-      - blocks:
-          - text: |+
-              ## 2026
-
-          - text: Placeholder (Senior Troupe)
-          - text: Placeholder (Shakespeare Troupe)
-          - text: Placeholder (Junior Troupe)
-          - text: Placeholder (Gaithersburg Group)
-      - blocks:
-          - text: |+
-              ## 2025
-
-          - text: Placeholder (Senior Troupe)
-          - text: Placeholder (Shakespeare Troupe)
-          - text: Placeholder (Junior Troupe)
-          - text: Placeholder (Gaithersburg Group)
-      - blocks:
-          - text: |+
-              ## 2024
-
-          - text: Placeholder (Senior Troupe)
-          - text: Placeholder (Shakespeare Troupe)
-          - text: Placeholder (Junior Troupe)
-          - text: Placeholder (Gaithersburg Group)
+    years:
+      - year: 2026
+        blocks:
+          - block:
+              - type: text
+                text: |
+                  ### Cinderella (Senior Troupe)
+              - type: image
+                image:
+                  src: /uploads/timeline/2026/SR - Cinderella/IMG_7371.webp
+                  alt: Placeholder (Senior Troupe)
+          - block:
+              - type: text
+                text: |
+                  ### Two Noble Kinsmen (Shakespeare Troupe)
+              - type: image
+                image:
+                  src: /uploads/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
+                  alt: Placeholder (Shakespeare Troupe)
+          - block:
+              - type: text
+                text: |
+                  ### Surf's Up (Junior Troupe)
+              - type: image
+                image:
+                  src: /uploads/timeline/2026/JR - Surf_s Up/IMG_6845.webp
+                  alt: Placeholder (Junior Troupe)
+          - block:
+              - type: text
+                text: |
+                  ### Peter Pan (Gaithersburg Troupe)
+              - type: image
+                image:
+                  src: /uploads/timeline/2026/GB - Peter Pan/IMG_5839.webp
+                  alt: Placeholder (Gaithersburg Troupe)
+      - year: 1995 (HST's Beginning)
 ---

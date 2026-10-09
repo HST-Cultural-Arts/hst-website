@@ -5,14 +5,16 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # Tech
 
           Our tech program is available for those who want to learn more about working behind the scenes. We offer workshops and classes that prepare your student to work backstage for one of our troupe or Showcase performances.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           ## Tech Classes and Workshops
 
           | Class | Ages | Time |

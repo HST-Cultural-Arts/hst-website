@@ -1,6 +1,5 @@
 ---
 import PageLayout from "./PageLayout.astro";
-import ContentBlock from "../components/ContentBlock.astro";
 import ContentSection from "../components/ContentSection.astro";
 
 type ButtonData = {
@@ -10,7 +9,6 @@ type ButtonData = {
 };
 
 type ContentBlockData = {
-  blocks?: ContentBlockData[];
   text?: string;
   image?: {
     src: string;
@@ -26,6 +24,12 @@ type Section = {
   type?: "default" | "timeline";
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlockData[];
+  years?: Array<{
+    year: number;
+    blocks?: Array<{
+      block?: ContentBlockData[];
+    }>;
+  }>;
 };
 
 type Frontmatter = {
@@ -44,11 +48,9 @@ const { title, sections = [] } = frontmatter;
         color={section.color}
         type={section.type}
         layout={section.layout}
-      >
-        {section.blocks?.map((block) => (
-          <ContentBlock block={block} />
-        ))}
-      </ContentSection>
+        blocks={section.blocks}
+        years={section.years}
+      />
     ))
   }
 </PageLayout>

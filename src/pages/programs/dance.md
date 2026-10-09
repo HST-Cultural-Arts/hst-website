@@ -5,14 +5,16 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # Dance
 
           We offer many dance classes at several levels starting at age 9 and going through high school. All dance students participate in our year end Showcase performance along with our acting and choir students.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           All dance classes are held at:
 
           Pat Berrend Dance Centre 9264 Gaither Rd., Gaithersburg, MD 20877
