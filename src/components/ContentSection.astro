@@ -31,12 +31,14 @@ type ContentBlockData = {
 
 type Props = {
   color?: string;
+  heading?: string;
   layout?: string;
   blocks?: ContentBlockData[];
 };
 
 const {
   color = "light",
+  heading,
   layout = "auto",
   blocks = [],
 } = Astro.props as Props;
@@ -46,11 +48,14 @@ const {
   class:list={[
     "content-section",
     `content-section--${color}`,
-    `content-section-layout--${layout}`,
   ]}
 >
-  {blocks.length > 0 &&
-    blocks.map((block) => <ContentBlock block={block} />)
-  }
-  <slot />
+  {heading && <h2 class="content-section__heading">{heading}</h2>}
+
+  <div class:list={["content-section__blocks", `content-section-layout--${layout}`]}>
+    {blocks.length > 0 &&
+      blocks.map((block) => <ContentBlock block={block} />)
+    }
+    <slot />
+  </div>
 </section>
