@@ -20,7 +20,8 @@ sections:
     years:
       - year: 2026
         blocks:
-          - block:
+          - href: /timeline/2026/sr-cinderella/
+            block:
               - type: text
                 text: |
                   ### Cinderella (Senior Troupe)
@@ -28,7 +29,8 @@ sections:
                 image:
                   src: /uploads/timeline/2026/SR - Cinderella/IMG_7371.webp
                   alt: Placeholder (Senior Troupe)
-          - block:
+          - href: /timeline/2026/sh-two-noble-kinsmen/
+            block:
               - type: text
                 text: |
                   ### Two Noble Kinsmen (Shakespeare Troupe)
@@ -36,7 +38,8 @@ sections:
                 image:
                   src: /uploads/timeline/2026/SH - Two Noble Kinsmen/IMG_6350.webp
                   alt: Placeholder (Shakespeare Troupe)
-          - block:
+          - href: /timeline/2026/jr-surfs-up/
+            block:
               - type: text
                 text: |
                   ### Surf's Up (Junior Troupe)
@@ -44,7 +47,8 @@ sections:
                 image:
                   src: /uploads/timeline/2026/JR - Surf_s Up/IMG_6845.webp
                   alt: Placeholder (Junior Troupe)
-          - block:
+          - href: /timeline/2026/gb-peter-pan/
+            block:
               - type: text
                 text: |
                   ### Peter Pan (Gaithersburg Troupe)
