@@ -199,6 +199,21 @@
     box-shadow: var(--shadow-md);
 }
 
+.timeline__card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.timeline__card-link:hover {
+    color: inherit;
+}
+
+.timeline__card-link:focus-visible {
+    outline: 3px solid var(--color-border-gold);
+    outline-offset: var(--space-xs);
+}
+
 .timeline__card--left {
     grid-column: 1;
 }
