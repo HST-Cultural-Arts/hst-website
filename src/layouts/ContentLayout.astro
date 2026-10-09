@@ -19,7 +19,7 @@ type ContentBlock = {
 
 type Section = {
   color: "dark" | "light";
-  type?: "default" | "timeline";
+  type?: "default" | "timeline" | "gallery";
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlock[];
   years?: Array<{
@@ -27,6 +27,10 @@ type Section = {
     blocks?: Array<{
       block?: ContentBlock[];
     }>;
+  }>;
+  gallery?: Array<{
+    src: string;
+    alt?: string;
   }>;
 };
 
@@ -48,6 +52,7 @@ const { title, sections = [] } = frontmatter;
         layout={section.layout}
         blocks={section.blocks}
         years={section.years}
+        gallery={section.gallery}
       />
     ))
   }

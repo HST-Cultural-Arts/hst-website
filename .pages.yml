@@ -89,7 +89,7 @@ components:
         label: Section type
         type: select
         options:
-          values: [default, timeline]
+          values: [default, timeline, gallery]
       - name: layout
         label: Layout
         type: select
@@ -117,6 +117,20 @@ components:
             fields:
               - name: button
                 component: button
+      - name: gallery
+        label: Gallery images
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Image {index}"
+        fields:
+          - name: src
+            label: Image file
+            type: image
+          - name: alt
+            label: Accessibility text
+            type: string
       - name: years
         label: Timeline years
         type: object
