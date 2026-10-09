@@ -1,7 +1,60 @@
 ---
-import '../styles/content-block.css';
+import "../styles/content-block.css";
+import Button from "./Button.astro";
+import Image from "./Image.astro";
+import Markdown from "./Markdown.astro";
+
+type ButtonData = {
+  href: string;
+  title: string;
+  type?: string;
+};
+
+type ContentBlockData = {
+  blocks?: ContentBlockData[];
+  text?: string;
+  image?: {
+    src: string;
+    alt?: string;
+    size?: "small" | "medium" | "large" | "full";
+    crop?: "natural" | "landscape" | "square" | "portrait";
+  };
+  button?: ButtonData;
+};
+
+const { block, depth = 0 } = Astro.props as {
+  block?: ContentBlockData;
+  depth?: number;
+};
 ---
 
-<section class=`content-block`>
+<section class:list={["content-block", `content-block--depth-${depth}`]}>
+  {block ? (
+    <>
+      {block.text && <Markdown text={block.text} />}
+
+      {block.image?.src && (
+        <Image
+          src={block.image.src}
+          alt={block.image.alt ?? ""}
+          size={block.image.size}
+          crop={block.image.crop}
+        />
+      )}
+
+      {block.button && (
+        <Button
+          href={block.button.href}
+          title={block.button.title}
+          type={block.button.type ?? "primary"}
+        />
+      )}
+
+      {block.blocks?.map((childBlock) => (
+        <Astro.self block={childBlock} depth={depth + 1} />
+      ))}
+    </>
+  ) : (
     <slot />
+  )}
 </section>
