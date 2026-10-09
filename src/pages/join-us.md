@@ -5,21 +5,24 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # Join Us
 
           Explore your creativity, make new friends, and grow your confidence.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           ## Get Involved
 
           HST welcomes students who want to explore performance, make new friends, and grow their confidence.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           ## Find Your Place
 
           Students can get involved through:

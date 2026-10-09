@@ -1,5 +1,4 @@
 .content-block {
-    min-height: 15vh;
     display: flex;
     flex-direction: column;
     gap: var(--space-md);

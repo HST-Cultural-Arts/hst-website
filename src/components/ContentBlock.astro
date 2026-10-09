@@ -11,7 +11,6 @@ type ButtonData = {
 };
 
 type ContentBlockData = {
-  blocks?: ContentBlockData[];
   text?: string;
   image?: {
     src: string;
@@ -22,13 +21,13 @@ type ContentBlockData = {
   button?: ButtonData;
 };
 
-const { block, depth = 0 } = Astro.props as {
+const { block, className = "" } = Astro.props as {
   block?: ContentBlockData;
-  depth?: number;
+  className?: string;
 };
 ---
 
-<section class:list={["content-block", `content-block--depth-${depth}`]}>
+<section class:list={["content-block", className]}>
   {block ? (
     <>
       {block.text && <Markdown text={block.text} />}
@@ -50,9 +49,6 @@ const { block, depth = 0 } = Astro.props as {
         />
       )}
 
-      {block.blocks?.map((childBlock) => (
-        <Astro.self block={childBlock} depth={depth + 1} />
-      ))}
     </>
   ) : (
     <slot />

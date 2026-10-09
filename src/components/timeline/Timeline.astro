@@ -1,0 +1,58 @@
+---
+import ContentBlock from "../ContentBlock.astro";
+
+type ContentBlockData = {
+  text?: string;
+  image?: {
+    src: string;
+    alt?: string;
+    size?: "small" | "medium" | "large" | "full";
+    crop?: "natural" | "landscape" | "square" | "portrait";
+  };
+  button?: {
+    href: string;
+    title: string;
+    type?: string;
+  };
+};
+
+type TimelineCard = {
+  block?: ContentBlockData[];
+};
+
+type TimelineYear = {
+  year: number;
+  blocks?: TimelineCard[];
+};
+
+const { years = [] } = Astro.props as {
+  years?: TimelineYear[];
+};
+---
+
+<div class="timeline">
+  {years.map((year) => (
+    <section class="timeline__year" aria-labelledby={`timeline-year-${year.year}`}>
+      <div class="timeline__year-label" id={`timeline-year-${year.year}`}>
+        <h2>{year.year}</h2>
+      </div>
+
+      {year.blocks?.length ? (
+        <div class="timeline__entries">
+        {year.blocks.map((card, cardIndex) => (
+            <article
+              class:list={[
+                "timeline__card",
+                cardIndex % 2 === 0
+                  ? "timeline__card--left"
+                  : "timeline__card--right",
+              ]}
+            >
+            {card.block?.map((block) => <ContentBlock block={block} />)}
+            </article>
+          ))}
+        </div>
+      ) : null}
+    </section>
+  ))}
+</div>

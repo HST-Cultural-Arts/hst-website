@@ -5,14 +5,16 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # Acting
 
           Our Acting A and B classes are your first step into acting here at HST. These classes meet on Friday morning from 10:00 – 12:00. At least one year of acting is required before you are able to audition for one of our Acting Troupes.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           Check out our Slide Shows of Past Performances All acting students perform a variety of skits in our Showcase production, along with our dance and choir classes.
 
           Acting A and B both cover the following topics:

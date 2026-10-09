@@ -6,14 +6,16 @@ sections:
   - color: dark
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           # 2024–25 Silent Auction Donors
 
           HST thanks our 2024–25 Silent Auction Donors.
   - color: light
     layout: auto
     blocks:
-      - text: |
+      - type: text
+        text: |
           ## 2024–25
 
           - Advance Auto Parts, Ellicott City
