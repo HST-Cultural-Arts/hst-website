@@ -2,13 +2,7 @@
 import PageLayout from "./PageLayout.astro";
 import ContentSection from "../components/ContentSection.astro";
 
-type ButtonData = {
-  href: string;
-  title: string;
-  type?: string;
-};
-
-type ContentBlockData = {
+type ContentBlock = {
   text?: string;
   image?: {
     src: string;
@@ -16,18 +10,22 @@ type ContentBlockData = {
     size?: "small" | "medium" | "large" | "full";
     crop?: "natural" | "landscape" | "square" | "portrait";
   };
-  button?: ButtonData;
+  button?: {
+    href: string;
+    title: string;
+    type?: string;
+  };
 };
 
 type Section = {
   color: "dark" | "light";
   type?: "default" | "timeline";
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
-  blocks?: ContentBlockData[];
+  blocks?: ContentBlock[];
   years?: Array<{
     year: number;
     blocks?: Array<{
-      block?: ContentBlockData[];
+      block?: ContentBlock[];
     }>;
   }>;
 };
