@@ -159,7 +159,20 @@
     width: 100%;
 }
 
+.timeline::before {
+    position: absolute;
+    top: var(--space-2xl);
+    bottom: var(--space-2xl);
+    left: 50%;
+    width: 2px;
+    background-color: var(--color-border-gold);
+    content: "";
+    transform: translateX(-50%);
+}
+
 .timeline__year {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-xl);
@@ -251,6 +264,11 @@
     .timeline__year {
         gap: var(--space-lg);
         margin-bottom: var(--space-xl);
+    }
+
+    .timeline::before {
+        left: var(--space-md);
+        transform: none;
     }
 
     .timeline__entries {

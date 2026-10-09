@@ -26,13 +26,6 @@ type ContentBlock = {
     src: string;
     alt?: string;
   }>;
-};
-
-type Section = {
-  color: "dark" | "light";
-  type?: "default" | "timeline";
-  layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
-  blocks?: ContentBlock[];
   years?: Array<{
     year: number | string;
     blocks?: Array<{
@@ -40,6 +33,12 @@ type Section = {
       block?: ContentBlock[];
     }>;
   }>;
+};
+
+type Section = {
+  color: "dark" | "light";
+  layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
+  blocks?: ContentBlock[];
 };
 
 type Frontmatter = {
@@ -56,10 +55,8 @@ const { title, sections = [] } = frontmatter;
     sections.map((section) => (
       <ContentSection
         color={section.color}
-        type={section.type}
         layout={section.layout}
         blocks={section.blocks}
-        years={section.years}
       />
     ))
   }

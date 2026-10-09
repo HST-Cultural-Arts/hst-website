@@ -5,6 +5,7 @@ import Embed from "./Embed.astro";
 import Gallery from "./Gallery.astro";
 import Image from "./Image.astro";
 import Markdown from "./Markdown.astro";
+import Timeline from "./Timeline.astro";
 
 type ButtonData = {
   href: string;
@@ -25,6 +26,14 @@ type GalleryImage = {
   alt?: string;
 };
 
+type TimelineYear = {
+  year: number | string;
+  blocks?: Array<{
+    href?: string;
+    block?: ContentBlockData[];
+  }>;
+};
+
 type ContentBlockData = {
   text?: string;
   image?: {
@@ -36,6 +45,7 @@ type ContentBlockData = {
   button?: ButtonData;
   embed?: EmbedData;
   gallery?: GalleryImage[];
+  years?: TimelineYear[];
 };
 
 const { block, className = "" } = Astro.props as {
@@ -77,6 +87,8 @@ const { block, className = "" } = Astro.props as {
       )}
 
       {block.gallery?.length ? <Gallery images={block.gallery} /> : null}
+
+      {block.years?.length ? <Timeline years={block.years} /> : null}
 
     </>
   ) : (
