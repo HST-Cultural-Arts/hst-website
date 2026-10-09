@@ -1,10 +1,7 @@
 ---
 import PageLayout from "./PageLayout.astro";
-import Button from "../components/Button.astro";
 import ContentBlock from "../components/ContentBlock.astro";
 import ContentSection from "../components/ContentSection.astro";
-import Image from "../components/Image.astro";
-import Markdown from "../components/Markdown.astro";
 
 type ButtonData = {
   href: string;
@@ -13,6 +10,7 @@ type ButtonData = {
 };
 
 type ContentBlockData = {
+  blocks?: ContentBlockData[];
   text?: string;
   image?: {
     src: string;
@@ -24,7 +22,8 @@ type ContentBlockData = {
 };
 
 type Section = {
-  type: "hero" | "default";
+  color: "dark" | "light";
+  type?: "default" | "timeline";
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlockData[];
 };
@@ -34,36 +33,22 @@ type Frontmatter = {
   sections?: Section[];
 };
 
-const { title, sections = [] } =
-  Astro.props.frontmatter as Frontmatter;
+const frontmatter = Astro.props.frontmatter as Frontmatter;
+const { title, sections = [] } = frontmatter;
 ---
 
 <PageLayout title={`${title} - HST Cultural Arts`}>
-  {sections.map((section) => (
-    <ContentSection
-      type={section.type}
-      layout={section.layout}
-    >
-      {section.blocks?.map((block) => (
-        <ContentBlock>
-          {block.text && <Markdown text={block.text} />}
-          {block.image?.src && (
-            <Image
-              src={block.image.src}
-              alt={block.image.alt ?? ""}
-              size={block.image.size}
-              crop={block.image.crop}
-            />
-          )}
-          {block.button && (
-            <Button
-              href={block.button.href}
-              title={block.button.title}
-              type={block.button.type ?? "primary"}
-            />
-          )}
-        </ContentBlock>
-      ))}
-    </ContentSection>
-  ))}
+  {
+    sections.map((section) => (
+      <ContentSection
+        color={section.color}
+        type={section.type}
+        layout={section.layout}
+      >
+        {section.blocks?.map((block) => (
+          <ContentBlock block={block} />
+        ))}
+      </ContentSection>
+    ))
+  }
 </PageLayout>

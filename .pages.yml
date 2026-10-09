@@ -73,6 +73,11 @@ components:
         type: select
         options:
           values: [dark, light]
+      - name: type
+        label: Section type
+        type: select
+        options:
+          values: [default, timeline]
       - name: layout
         label: Layout
         type: select
@@ -124,7 +129,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{fields.type}"
+            summary: "{fields.color} {fields.type}"
 
   - name: header
     label: Header
