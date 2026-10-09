@@ -144,11 +144,22 @@ components:
         default: auto
         description: Auto uses a flexible wrapping layout. Column options use an equal-width grid.
         options:
-          values: [auto, 1col, 2cols, 3cols, 4cols, 5cols]
+          values:
+            - name: auto
+              label: Automatic
+            - name: 1col
+              label: 1 column
+            - name: 2cols
+              label: 2 columns
+            - name: 3cols
+              label: 3 columns
+            - name: 4cols
+              label: 4 columns
+            - name: 5cols
+              label: 5 columns
       - name: blocks
-        label: Content blocks
+        label: Content blocks (optional)
         type: block
-        description: Add content blocks and choose each block's type.
         list:
           collapsible:
             collapsed: true
@@ -177,9 +188,8 @@ components:
             description: Display multiple images as a slideshow gallery.
             fields:
               - name: gallery
-                label: Gallery images
+                label: Gallery images (add one or more)
                 type: object
-                description: Add one or more images. Include accessibility text whenever possible.
                 list:
                   collapsible:
                     collapsed: true
@@ -198,9 +208,8 @@ components:
             description: Display dated entries with text, images, buttons, or embeds.
             fields:
               - name: years
-                label: Timeline years
+                label: Timeline years (optional)
                 type: object
-                description: Add a year or milestone. A year may stand alone without entries.
                 list:
                   collapsible:
                     collapsed: true
@@ -212,9 +221,8 @@ components:
                     required: true
                     description: Enter a year or milestone label, such as "1995 (HST's Beginning)".
                   - name: blocks
-                    label: Timeline entries
+                    label: Timeline entries (optional)
                     type: object
-                    description: Optional entries belonging to this year.
                     list:
                       collapsible:
                         collapsed: true
@@ -272,7 +280,6 @@ content:
       - name: sections
         label: Page sections
         component: section
-        description: Add optional sections to build the page from content blocks.
         list:
           collapsible:
             collapsed: true
