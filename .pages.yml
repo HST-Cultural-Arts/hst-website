@@ -99,6 +99,51 @@ components:
             component: image
           - name: button
             component: button
+          - name: blocks
+            label: Nested blocks
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "Nested block {index}"
+            fields:
+              - name: text
+                label: Text
+                type: rich-text
+              - name: image
+                component: image
+              - name: button
+                component: button
+              - name: blocks
+                label: Nested blocks
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "Nested block {index}"
+                fields:
+                  - name: text
+                    label: Text
+                    type: rich-text
+                  - name: image
+                    component: image
+                  - name: button
+                    component: button
+                  - name: blocks
+                    label: Nested blocks
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "Nested block {index}"
+                    fields:
+                      - name: text
+                        label: Text
+                        type: rich-text
+                      - name: image
+                        component: image
+                      - name: button
+                        component: button
 
 content:
   - name: pages
