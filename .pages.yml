@@ -111,11 +111,6 @@ components:
         type: select
         options:
           values: [dark, light]
-      - name: type
-        label: Section type
-        type: select
-        options:
-          values: [default, timeline]
       - name: layout
         label: Layout
         type: select
@@ -162,69 +157,54 @@ components:
                   - name: alt
                     label: Accessibility text
                     type: string
-      - name: years
-        label: Timeline years
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{fields.year}"
-        fields:
-          - name: year
-            label: Year
-            type: number
-          - name: blocks
-            label: Timeline blocks
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "Block {index}"
+          - name: timeline
+            label: Timeline block
             fields:
-              - name: href
-                label: Page link
-                type: string
-              - name: block
-                label: Block content
-                type: block
+              - name: years
+                label: Timeline years
+                type: object
                 list:
                   collapsible:
                     collapsed: true
-                    summary: "Content block {index}"
-                blockKey: type
-                blocks:
-                  - name: text
-                    component: text
-                  - name: image
-                    label: Image block
+                    summary: "{fields.year}"
+                fields:
+                  - name: year
+                    label: Year
+                    type: number
+                  - name: blocks
+                    label: Timeline blocks
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "Block {index}"
                     fields:
-                      - name: image
-                        component: image
-                  - name: button
-                    label: Button block
-                    fields:
-                      - name: button
-                        component: button
-                  - name: embed
-                    component: embed
-                  - name: gallery
-                    label: Gallery block
-                    fields:
-                      - name: gallery
-                        label: Gallery images
-                        type: object
+                      - name: href
+                        label: Page link
+                        type: string
+                      - name: block
+                        label: Block content
+                        type: block
                         list:
                           collapsible:
                             collapsed: true
-                            summary: "Image {index}"
-                        fields:
-                          - name: src
-                            label: Image file
-                            type: image
-                          - name: alt
-                            label: Accessibility text
-                            type: string
-
+                            summary: "Content block {index}"
+                        blockKey: type
+                        blocks:
+                          - name: text
+                            component: text
+                          - name: image
+                            label: Image block
+                            fields:
+                              - name: image
+                                component: image
+                          - name: button
+                            label: Button block
+                            fields:
+                              - name: button
+                                component: button
+                          - name: embed
+                            component: embed
 content:
   - name: pages
     label: Pages
@@ -254,7 +234,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{fields.color} {fields.type}"
+            summary: "{fields.color} section"
 
   - name: header
     label: Header
