@@ -6,16 +6,44 @@
   },
   "navigation": {
     "navLinks": [
-      { "label": "Home", "href": "/" },
-      { "label": "About", "href": "/about" },
-      { "label": "Contact", "href": "/contact" },
-      { "label": "Calendar", "href": "/calendar" },
-      { "label": "Timeline", "href": "/timeline" },
-      { "label": "Donors", "href": "/donors" }
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      },
+      {
+        "label": "Calendar",
+        "href": "/calendar"
+      },
+      {
+        "label": "Volunteers",
+        "href": "/volunteers"
+      },
+      {
+        "label": "Timeline",
+        "href": "/timeline"
+      },
+      {
+        "label": "Donors",
+        "href": "/donors"
+      }
     ],
     "ctaLinks": [
-      { "label": "Support Us", "href": "/support-us" },
-      { "label": "Join Us", "href": "/join-us" }
+      {
+        "label": "Support Us",
+        "href": "/support-us"
+      },
+      {
+        "label": "Join Us",
+        "href": "/join-us"
+      }
     ]
   }
 }
