@@ -287,8 +287,11 @@ content:
         type: string
         required: true
         description: >
-          The filename is generated from the title. Usually leave it unchanged.
-          For a folder's main page, use index.md.
+          Enter the complete filename above, generally based on the page's name. 
+          Use a normal filename such as two-noble-kinsmen.md, or use index.md 
+          for a folder's main page (i.e. if you are in the programs folder, that 
+          means your page will be at hstonline.org/programs). The ".md" is just 
+          the file extension for Markdown files, and is required.
       - name: sections
         label: Page sections
         component: section
