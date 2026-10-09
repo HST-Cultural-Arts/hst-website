@@ -90,6 +90,7 @@
     /* Borders & dividers */
     --color-border: var(--stone-200);
     --color-border-strong: var(--stone-300);
+    --color-border-dark: var(--stone-600);
     --color-border-inverse: rgba(253, 251, 246, 0.16);
     --color-border-gold: var(--gold-500);
 

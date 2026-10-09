@@ -2,6 +2,7 @@
 import "../styles/content-section.css";
 import "../styles/timeline.css";
 import ContentBlock from "./ContentBlock.astro";
+import Gallery from "./Gallery.astro";
 import Timeline from "./Timeline.astro";
 
 type ContentBlockData = {
@@ -26,12 +27,18 @@ type TimelineYearData = {
   }>;
 };
 
+type GalleryData = {
+  src: string;
+  alt?: string;
+}[];
+
 type Props = {
   color?: string;
   type?: string;
   layout?: string;
   blocks?: ContentBlockData[];
   years?: TimelineYearData[];
+  gallery?: GalleryData;
 };
 
 const {
@@ -40,6 +47,7 @@ const {
   layout = "auto",
   blocks = [],
   years = [],
+  gallery = [],
 } = Astro.props as Props;
 ---
 
@@ -52,6 +60,8 @@ const {
   ]}
 >
   {type === "timeline" && <Timeline years={years} />}
+
+  {type === "gallery" && <Gallery images={gallery} />}
 
   {type === "default" && blocks.length > 0 &&
     blocks.map((block) => <ContentBlock block={block} />)

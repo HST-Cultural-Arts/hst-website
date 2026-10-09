@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/ContentLayout.astro
+layout: ../../layouts/ContentLayout.astro
 title: Timeline
 sections:
   - color: dark
