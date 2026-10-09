@@ -1,0 +1,46 @@
+.embed {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+}
+
+.embed--small {
+    max-width: 30rem;
+}
+
+.embed--medium {
+    max-width: 42rem;
+}
+
+.embed--large {
+    max-width: 60rem;
+}
+
+.embed--full {
+    max-width: none;
+}
+
+.embed--short iframe {
+    height: 20rem;
+}
+
+.embed--medium iframe {
+    height: 32rem;
+}
+
+.embed--tall iframe {
+    height: 48rem;
+}
+
+.embed iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+.embed__error {
+    margin: 0;
+    color: var(--color-text-muted);
+}

@@ -15,6 +15,13 @@ type ContentBlock = {
     title: string;
     type?: string;
   };
+  embed?: {
+    provider: "calendar" | "youtube";
+    src: string;
+    title: string;
+    size?: "small" | "medium" | "large" | "full";
+    height?: "short" | "medium" | "tall";
+  };
 };
 
 type Section = {

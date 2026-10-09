@@ -1,6 +1,7 @@
 ---
 import "../styles/content-block.css";
 import Button from "./Button.astro";
+import Embed from "./Embed.astro";
 import Image from "./Image.astro";
 import Markdown from "./Markdown.astro";
 
@@ -8,6 +9,14 @@ type ButtonData = {
   href: string;
   title: string;
   type?: string;
+};
+
+type EmbedData = {
+  provider: "calendar" | "youtube";
+  src: string;
+  title: string;
+  size?: "small" | "medium" | "large" | "full";
+  height?: "short" | "medium" | "tall";
 };
 
 type ContentBlockData = {
@@ -19,6 +28,7 @@ type ContentBlockData = {
     crop?: "natural" | "landscape" | "square" | "portrait";
   };
   button?: ButtonData;
+  embed?: EmbedData;
 };
 
 const { block, className = "" } = Astro.props as {
@@ -46,6 +56,16 @@ const { block, className = "" } = Astro.props as {
           href={block.button.href}
           title={block.button.title}
           type={block.button.type ?? "primary"}
+        />
+      )}
+
+      {block.embed && (
+        <Embed
+          provider={block.embed.provider}
+          src={block.embed.src}
+          title={block.embed.title}
+          size={block.embed.size}
+          height={block.embed.height}
         />
       )}
 
