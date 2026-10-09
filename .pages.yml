@@ -76,6 +76,32 @@ components:
         label: Text
         type: rich-text
 
+  embed:
+    type: object
+    label: Embed
+    fields:
+      - name: provider
+        label: Provider
+        type: select
+        options:
+          values: [calendar, youtube]
+      - name: src
+        label: Embed URL
+        type: string
+      - name: title
+        label: Accessibility title
+        type: string
+      - name: size
+        label: Display size
+        type: select
+        options:
+          values: [small, medium, large, full]
+      - name: height
+        label: Viewport height
+        type: select
+        options:
+          values: [short, medium, tall]
+
   section:
     type: object
     label: Section
@@ -117,6 +143,8 @@ components:
             fields:
               - name: button
                 component: button
+          - name: embed
+            component: embed
       - name: gallery
         label: Gallery images
         type: object
@@ -174,6 +202,8 @@ components:
                     fields:
                       - name: button
                         component: button
+                  - name: embed
+                    component: embed
 
 content:
   - name: pages

@@ -9,6 +9,7 @@
       { "label": "Home", "href": "/" },
       { "label": "About", "href": "/about" },
       { "label": "Contact", "href": "/contact" },
+      { "label": "Calendar", "href": "/calendar" },
       { "label": "Timeline", "href": "/timeline" },
       { "label": "Donors", "href": "/donors" }
     ],

@@ -9,11 +9,7 @@ sections:
         text: |
           # Timeline
 
-
-          Scroll down for a timeline of all our shows.  Click the photo under
-          each entry to see a slideshow from that show and to share a
-          memory.  Our timeline is a work in progress.  Keep checking back for
-          more pictures and links.
+          Scroll down for a timeline of all our shows. Our timeline is a work in progress. Keep checking back for more pictures and links!
   - color: light
     type: timeline
     layout: 1col

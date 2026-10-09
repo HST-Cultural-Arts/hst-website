@@ -1,0 +1,65 @@
+---
+import "../styles/embed.css";
+
+type Provider = "calendar" | "youtube";
+type Size = "small" | "medium" | "large" | "full";
+type Height = "short" | "medium" | "tall";
+
+interface Props {
+  provider: Provider;
+  src: string;
+  title: string;
+  size?: Size;
+  height?: Height;
+}
+
+const {
+  provider,
+  src,
+  title,
+  size = "large",
+  height = provider === "calendar" ? "tall" : "medium",
+} = Astro.props;
+
+const allowedHosts: Record<Provider, string[]> = {
+  calendar: ["calendar.google.com"],
+  youtube: ["www.youtube.com"],
+};
+
+let embedUrl: URL | null = null;
+
+try {
+  const parsedUrl = new URL(src);
+  if (
+    parsedUrl.protocol === "https:" &&
+    allowedHosts[provider].includes(parsedUrl.hostname)
+  ) {
+    embedUrl = parsedUrl;
+  }
+} catch {
+  embedUrl = null;
+}
+
+const isVideo = provider === "youtube";
+---
+
+{
+  embedUrl ? (
+    <div class:list={["embed", `embed--${size}`, `embed--${height}`]}>
+      <iframe
+        src={embedUrl.toString()}
+        title={title}
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow={
+          isVideo
+            ? "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            : undefined
+        }
+        allowfullscreen={isVideo}
+      />
+    </div>
+  ) : (
+    <p class="embed__error">This embed could not be displayed.</p>
+  )
+}
