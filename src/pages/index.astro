@@ -1,82 +1,12 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
-import ContentSection from "../components/ContentSection.astro";
-import Button from "../components/Button.astro";
-import ContentBlock from "../components/ContentBlock.astro";
-import Image from "../components/Image.astro";
+import { getEntry } from "astro:content";
+import ContentLayout from "../layouts/ContentLayout.astro";
+
+const page = await getEntry("pages", "index");
+
+if (!page) {
+  throw new Error("Homepage content entry not found: src/content/pages/index.md");
+}
 ---
 
-<PageLayout title="Home - HST Cultural Arts">
-  <ContentSection color="home-hero">
-    <ContentBlock>
-      <h1>Welcome to HST Cultural Arts</h1>
-      <p>Dance • Acting • Troupes • Tech</p>
-    </ContentBlock>
-  </ContentSection>
-  <ContentSection>
-    <ContentBlock>
-      <h2>About HST</h2>
-      <p>
-        We are nonprofit children's theater organization dedicated to providing
-        high quality arts programs where students can explore their talents,
-        build confidence, and be part of something special.
-      </p>
-      <Button href="/about" title="Learn More" type="primary" />
-    </ContentBlock>
-    <ContentBlock>
-      <Image
-        src="/assets/brand/HST-logo-white-on-black.png"
-        alt="HST Cultural Arts logo"
-        size="medium"
-        crop="natural"
-        loading="lazy"
-      />
-    </ContentBlock>
-  </ContentSection>
-  <ContentSection heading="Our Programs" layout="2cols">
-    <ContentBlock variant="card">
-      <h3>Acting</h3>
-      <Image
-        src="/assets/uploads/images/homepage/acting.webp"
-        alt="Students performing in an acting production"
-        size="full"
-        crop="landscape"
-        loading="lazy"
-      />
-      <Button href="/programs/acting" title="Learn about Acting" type="primary" />
-    </ContentBlock>
-    <ContentBlock variant="card">
-      <h3>Dance</h3>
-      <Image
-        src="/assets/uploads/images/homepage/dance.webp"
-        alt="Students performing a dance routine"
-        size="full"
-        crop="landscape"
-        loading="lazy"
-      />
-      <Button href="/programs/dance" title="Learn about Dance" type="primary" />
-    </ContentBlock>
-    <ContentBlock variant="card">
-      <h3>Tech</h3>
-      <Image
-        src="/assets/uploads/images/homepage/tech.webp"
-        alt="Students working on tech"
-        size="full"
-        crop="landscape"
-        loading="lazy"
-      />
-      <Button href="/programs/tech" title="Learn about Tech" type="primary" />
-    </ContentBlock>
-    <ContentBlock variant="card">
-      <h3>Troupes</h3>
-      <Image
-        src="/assets/uploads/images/homepage/troupes.webp"
-        alt="HST student troupe members performing together"
-        size="full"
-        crop="landscape"
-        loading="lazy"
-      />
-      <Button href="/programs/troupes" title="Learn about Troupes" type="primary" />
-    </ContentBlock>
-  </ContentSection>
-</PageLayout>
+<ContentLayout frontmatter={page.data} />

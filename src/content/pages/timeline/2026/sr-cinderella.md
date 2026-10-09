@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
 title: Cinderella
 sections:
   - color: dark

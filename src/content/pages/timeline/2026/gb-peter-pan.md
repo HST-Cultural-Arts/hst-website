@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
 title: Peter Pan
 sections:
   - color: dark

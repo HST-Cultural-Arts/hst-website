@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
 title: The Two Noble Kinsmen
 sections:
   - color: dark

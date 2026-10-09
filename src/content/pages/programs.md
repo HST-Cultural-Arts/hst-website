@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/ContentLayout.astro
 title: Programs
 sections:
   - color: dark

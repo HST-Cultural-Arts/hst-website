@@ -26,6 +26,17 @@ type GalleryImage = {
   alt?: string;
 };
 
+type CardData = {
+  heading: string;
+  image: {
+    src: string;
+    alt?: string;
+    size?: "small" | "medium" | "large" | "full";
+    crop?: "natural" | "landscape" | "square" | "portrait";
+  };
+  button: ButtonData;
+};
+
 type TimelineYear = {
   year: number | string;
   blocks?: Array<{
@@ -43,6 +54,7 @@ type ContentBlockData = {
     crop?: "natural" | "landscape" | "square" | "portrait";
   };
   button?: ButtonData;
+  card?: CardData;
   embed?: EmbedData;
   gallery?: GalleryImage[];
   years?: TimelineYear[];
@@ -53,43 +65,64 @@ const { block, className = "", variant = "transparent" } = Astro.props as {
   className?: string;
   variant?: "transparent" | "card";
 };
+
+const blockVariant = block?.card ? "card" : variant;
 ---
 
-<section class:list={["content-block", `content-block--${variant}`, className]}>
+<section class:list={["content-block", `content-block--${blockVariant}`, className]}>
   {block ? (
     <>
-      {block.text && <Markdown text={block.text} />}
+      {block.card ? (
+        <>
+          <h3>{block.card.heading}</h3>
+          <Image
+            src={block.card.image.src}
+            alt={block.card.image.alt ?? ""}
+            size={block.card.image.size ?? "full"}
+            crop={block.card.image.crop ?? "landscape"}
+          />
+          <Button
+            href={block.card.button.href}
+            title={block.card.button.title}
+            type={block.card.button.type ?? "primary"}
+          />
+        </>
+      ) : (
+        <>
+          {block.text && <Markdown text={block.text} />}
 
-      {block.image?.src && (
-        <Image
-          src={block.image.src}
-          alt={block.image.alt ?? ""}
-          size={block.image.size}
-          crop={block.image.crop}
-        />
+          {block.image?.src && (
+            <Image
+              src={block.image.src}
+              alt={block.image.alt ?? ""}
+              size={block.image.size}
+              crop={block.image.crop}
+            />
+          )}
+
+          {block.button && (
+            <Button
+              href={block.button.href}
+              title={block.button.title}
+              type={block.button.type ?? "primary"}
+            />
+          )}
+
+          {block.embed && (
+            <Embed
+              provider={block.embed.provider}
+              src={block.embed.src}
+              title={block.embed.title}
+              size={block.embed.size}
+              height={block.embed.height}
+            />
+          )}
+
+          {block.gallery?.length ? <Gallery images={block.gallery} /> : null}
+
+          {block.years?.length ? <Timeline years={block.years} /> : null}
+        </>
       )}
-
-      {block.button && (
-        <Button
-          href={block.button.href}
-          title={block.button.title}
-          type={block.button.type ?? "primary"}
-        />
-      )}
-
-      {block.embed && (
-        <Embed
-          provider={block.embed.provider}
-          src={block.embed.src}
-          title={block.embed.title}
-          size={block.embed.size}
-          height={block.embed.height}
-        />
-      )}
-
-      {block.gallery?.length ? <Gallery images={block.gallery} /> : null}
-
-      {block.years?.length ? <Timeline years={block.years} /> : null}
 
     </>
   ) : (
