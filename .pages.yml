@@ -1,6 +1,6 @@
 media:
-  - name: uploads
-    label: Page uploads
+  - name: images
+    label: Images
     input: public/assets/uploads/images
     output: /assets/uploads/images
     categories: [image]
