@@ -269,7 +269,9 @@ content:
     format: yaml-frontmatter
     exclude:
       - index.astro
-    filename: "{primary}.md"
+    filename:
+      template: "{primary}.md"
+      field: create
     view:
       primary: title
       fields: [title]
@@ -284,7 +286,9 @@ content:
         label: Page title
         type: string
         required: true
-        description: The page title shown in the browser and page heading.
+        description: >
+          The filename is generated from the title. Usually leave it unchanged.
+          For a folder's main page, use index.md.
       - name: sections
         label: Page sections
         component: section
