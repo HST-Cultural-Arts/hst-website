@@ -2,7 +2,7 @@
 import "../styles/content-section.css";
 import "../styles/timeline.css";
 import ContentBlock from "./ContentBlock.astro";
-import Timeline from "./timeline/Timeline.astro";
+import Timeline from "./Timeline.astro";
 
 type ContentBlockData = {
   text?: string;
@@ -20,7 +20,7 @@ type ContentBlockData = {
 };
 
 type TimelineYearData = {
-  year: number;
+  year: number | string;
   blocks?: Array<{
     block?: ContentBlockData[];
   }>;
