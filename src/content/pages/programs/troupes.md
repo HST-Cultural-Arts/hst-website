@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ContentLayout.astro
 title: Troupes
 sections:
   - color: dark

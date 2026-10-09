@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/ContentLayout.astro
 title: Silent Auction Donors
 sections:
   - color: dark

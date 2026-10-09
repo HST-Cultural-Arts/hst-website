@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/ContentLayout.astro
 title: Contact
 sections:
   - color: dark

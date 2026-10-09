@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
 title: Threads Left Unsewn
 sections:
   - color: dark

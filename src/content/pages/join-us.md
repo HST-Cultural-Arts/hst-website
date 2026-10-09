@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/ContentLayout.astro
 title: Join Us
 sections:
   - color: dark

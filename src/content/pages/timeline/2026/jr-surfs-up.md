@@ -1,5 +1,4 @@
 ---
-layout: ../../../layouts/ContentLayout.astro
 title: Surf's Up
 sections:
   - color: dark

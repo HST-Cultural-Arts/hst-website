@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ContentLayout.astro
 title: Acting
 sections:
   - color: dark

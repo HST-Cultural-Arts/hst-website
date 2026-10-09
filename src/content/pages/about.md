@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/ContentLayout.astro
 title: About
 sections:
   - color: dark

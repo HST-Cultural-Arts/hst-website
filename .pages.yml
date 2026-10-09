@@ -38,6 +38,21 @@ components:
         options:
           values: [primary, secondary]
 
+  card:
+    type: object
+    label: Program card
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+        required: true
+      - name: image
+        label: Image
+        component: image
+      - name: button
+        label: Button
+        component: button
+
   image:
     type: object
     label: Image
@@ -140,7 +155,7 @@ components:
         required: true
         default: light
         options:
-          values: [dark, light]
+          values: [dark, light, home-hero]
         description: The color of the section, dark or light.
       - name: heading
         label: Section heading
@@ -188,6 +203,10 @@ components:
             fields:
               - name: button
                 component: button
+          - name: card
+            label: Card block
+            description: Display a heading, image, and button together as a card.
+            component: card
           - name: embed
             label: Embed block
             component: embed
@@ -265,10 +284,9 @@ content:
   - name: pages
     label: Pages
     type: collection
-    path: src/pages
+    path: src/content/pages
+    subfolders: true
     format: yaml-frontmatter
-    exclude:
-      - index.astro
     filename:
       template: "{primary}.md"
       field: create
@@ -276,22 +294,14 @@ content:
       primary: title
       fields: [title]
     fields:
-      - name: layout
-        label: Layout
-        type: string
-        default: ../layouts/ContentLayout.astro
-        hidden: true
-        readonly: true
       - name: title
         label: Page title
         type: string
         required: true
         description: >
-          Enter the complete filename above, generally based on the page's name. 
-          Use a normal filename such as two-noble-kinsmen.md, or use index.md 
-          for a folder's main page (i.e. if you are in the programs folder, that 
-          means your page will be at hstonline.org/programs). The ".md" is just 
-          the file extension for Markdown files, and is required.
+          Enter the complete filename above, generally based on the page's name.
+          Use a root filename such as programs.md or timeline.md for a section
+          landing page. The ".md" is the file extension for Markdown files.
       - name: sections
         label: Page sections
         component: section
