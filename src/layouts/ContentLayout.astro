@@ -22,11 +22,15 @@ type ContentBlock = {
     size?: "small" | "medium" | "large" | "full";
     height?: "short" | "medium" | "tall";
   };
+  gallery?: Array<{
+    src: string;
+    alt?: string;
+  }>;
 };
 
 type Section = {
   color: "dark" | "light";
-  type?: "default" | "timeline" | "gallery";
+  type?: "default" | "timeline";
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlock[];
   years?: Array<{
@@ -35,10 +39,6 @@ type Section = {
       href?: string;
       block?: ContentBlock[];
     }>;
-  }>;
-  gallery?: Array<{
-    src: string;
-    alt?: string;
   }>;
 };
 
@@ -60,7 +60,6 @@ const { title, sections = [] } = frontmatter;
         layout={section.layout}
         blocks={section.blocks}
         years={section.years}
-        gallery={section.gallery}
       />
     ))
   }

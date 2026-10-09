@@ -2,6 +2,7 @@
 import "../styles/content-block.css";
 import Button from "./Button.astro";
 import Embed from "./Embed.astro";
+import Gallery from "./Gallery.astro";
 import Image from "./Image.astro";
 import Markdown from "./Markdown.astro";
 
@@ -19,6 +20,11 @@ type EmbedData = {
   height?: "short" | "medium" | "tall";
 };
 
+type GalleryImage = {
+  src: string;
+  alt?: string;
+};
+
 type ContentBlockData = {
   text?: string;
   image?: {
@@ -29,6 +35,7 @@ type ContentBlockData = {
   };
   button?: ButtonData;
   embed?: EmbedData;
+  gallery?: GalleryImage[];
 };
 
 const { block, className = "" } = Astro.props as {
@@ -68,6 +75,8 @@ const { block, className = "" } = Astro.props as {
           height={block.embed.height}
         />
       )}
+
+      {block.gallery?.length ? <Gallery images={block.gallery} /> : null}
 
     </>
   ) : (

@@ -115,7 +115,7 @@ components:
         label: Section type
         type: select
         options:
-          values: [default, timeline, gallery]
+          values: [default, timeline]
       - name: layout
         label: Layout
         type: select
@@ -145,20 +145,23 @@ components:
                 component: button
           - name: embed
             component: embed
-      - name: gallery
-        label: Gallery images
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "Image {index}"
-        fields:
-          - name: src
-            label: Image file
-            type: image
-          - name: alt
-            label: Accessibility text
-            type: string
+          - name: gallery
+            label: Gallery block
+            fields:
+              - name: gallery
+                label: Gallery images
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "Image {index}"
+                fields:
+                  - name: src
+                    label: Image file
+                    type: image
+                  - name: alt
+                    label: Accessibility text
+                    type: string
       - name: years
         label: Timeline years
         type: object
@@ -204,6 +207,23 @@ components:
                         component: button
                   - name: embed
                     component: embed
+                  - name: gallery
+                    label: Gallery block
+                    fields:
+                      - name: gallery
+                        label: Gallery images
+                        type: object
+                        list:
+                          collapsible:
+                            collapsed: true
+                            summary: "Image {index}"
+                        fields:
+                          - name: src
+                            label: Image file
+                            type: image
+                          - name: alt
+                            label: Accessibility text
+                            type: string
 
 content:
   - name: pages
