@@ -267,6 +267,35 @@ components:
         options:
           values: [short, medium, tall]
 
+  timeline:
+    type: object
+    label: Timeline
+    fields:
+      - name: years
+        label: Timeline years (optional)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.year}"
+        fields:
+          - name: year
+            label: Year
+            type: string
+            required: true
+            description: Enter a year or milestone label, such as "1995 (HST's Beginning)".
+          - name: blocks
+            label: Timeline entries (optional)
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "Entry {index}"
+            fields:
+              - name: block
+                label: Entry content
+                component: contentblock
+
   section:
     type: object
     label: Section
@@ -339,31 +368,7 @@ components:
           - name: timeline
             label: Timeline block
             description: Display dated entries with text, images, buttons, or embeds.
-            fields:
-              - name: years
-                label: Timeline years (optional)
-                type: object
-                list:
-                  collapsible:
-                    collapsed: true
-                    summary: "{fields.year}"
-                fields:
-                  - name: year
-                    label: Year
-                    type: string
-                    required: true
-                    description: Enter a year or milestone label, such as "1995 (HST's Beginning)".
-                  - name: blocks
-                    label: Timeline entries (optional)
-                    type: object
-                    list:
-                      collapsible:
-                        collapsed: true
-                        summary: "Entry {index}"
-                    fields:
-                      - name: block
-                        label: Entry content
-                        component: contentblock
+            component: timeline
 content:
   - name: pages
     label: Pages

@@ -7,8 +7,6 @@ sections:
       - type: text
         text: |
           # Welcome to HST Cultural Arts
-
-          Dance • Acting • Troupes • Tech
   - color: cream
     layout: 2cols
     blocks:
@@ -94,4 +92,8 @@ sections:
               button:
                 title: Learn about Troupes
                 href: /programs/troupes
+      - type: button
+        button:
+          title: See all of our programs
+          href: /programs
 ---

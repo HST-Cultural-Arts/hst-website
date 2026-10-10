@@ -44,4 +44,6 @@ const galleryImages = Array.isArray(block.gallery)
 
 {galleryImages.length ? <Gallery images={galleryImages} /> : null}
 
-{block.years?.length ? <Timeline years={block.years} /> : null}
+{block.timeline?.years?.length ? <Timeline years={block.timeline.years} /> : null}
+
+{!block.timeline && block.years?.length ? <Timeline years={block.years} /> : null}

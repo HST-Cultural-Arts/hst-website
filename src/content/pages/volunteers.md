@@ -8,6 +8,8 @@ sections:
         text: |+
           # Volunteers
 
+          The backbone of HST is our volunteers.
+
   - color: cream
     layout: auto
     blocks:

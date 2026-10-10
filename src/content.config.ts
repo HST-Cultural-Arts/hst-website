@@ -34,6 +34,11 @@ export type GalleryData =
       images?: GalleryImage[];
     };
 
+export type BlockGroupData = {
+  color?: "navy" | "cream" | "white" | "transparent";
+  blocks?: ContentBlockData[];
+};
+
 export type ContentBlockData = {
   type?: "text" | "image" | "button" | "embed" | "gallery" | "timeline" | "block";
   text?: string;
@@ -41,18 +46,20 @@ export type ContentBlockData = {
   button?: ButtonData;
   embed?: EmbedData;
   gallery?: GalleryData;
-  block?: {
-    color?: "navy" | "cream" | "white" | "transparent";
-    blocks?: ContentBlockData[];
-  };
+  block?: BlockGroupData;
+  timeline?: TimelineData;
   years?: TimelineYear[];
 };
 
 export type TimelineYear = {
   year: number | string;
   blocks?: Array<{
-    block?: ContentBlockData;
+    block?: BlockGroupData;
   }>;
+};
+
+export type TimelineData = {
+  years?: TimelineYear[];
 };
 
 export type Section = {
@@ -100,6 +107,30 @@ const gallerySchema = z.union([
   }),
 ]);
 
+const timelineYearsSchema = () =>
+  z.array(
+    z.object({
+      year: z.union([z.string(), z.number()]),
+      blocks: z
+        .array(
+          z.object({
+            block: z
+              .lazy(
+                (): ZodType<BlockGroupData> =>
+                  z.object({
+                    color: z
+                      .enum(["navy", "cream", "white", "transparent"])
+                      .optional(),
+                    blocks: z.array(contentBlockSchema).optional(),
+                  }),
+              )
+              .optional(),
+          }),
+        )
+        .optional(),
+    }),
+  );
+
 const contentBlockSchema: ZodType<ContentBlockData> = z.lazy(
   (): ZodType<ContentBlockData> =>
   z.object({
@@ -117,20 +148,8 @@ const contentBlockSchema: ZodType<ContentBlockData> = z.lazy(
         blocks: z.array(contentBlockSchema).optional(),
       })
       .optional(),
-    years: z
-      .array(
-        z.object({
-          year: z.union([z.string(), z.number()]),
-          blocks: z
-            .array(
-              z.object({
-                block: contentBlockSchema.optional(),
-              }),
-            )
-            .optional(),
-        }),
-      )
-      .optional(),
+    timeline: z.object({ years: timelineYearsSchema().optional() }).optional(),
+    years: timelineYearsSchema().optional(),
   }),
 );
 
