@@ -5,23 +5,27 @@ sections:
     layout: auto
     blocks:
       - type: text
-        text: |
+        text: >-
           # Dance
 
-          We offer many dance classes at several levels starting at age 9 and going through high school. All dance students participate in our year end Showcase performance along with our acting and choir students.
+
+          We offer many dance classes at several levels starting at age 9 and
+          going through high school. All dance students participate in our year
+          end Showcase performance along with our acting and choir students.
   - color: cream
     layout: auto
     blocks:
       - type: text
-        text: |
+        text: |+
           All dance classes are held at:
 
-          Pat Berrend Dance Centre 9264 Gaither Rd., Gaithersburg, MD 20877
+          Dawn Crafton Dance Connection 152 Gibbs Street, Rockville, MD 20850
 
           ## Wednesday Dance Classes
 
+
           | Class | Ages | Time |
-          | --- | --- | --- |
+          | --------------- | ------- | ------------- |
           | Irish Soft Shoe | 9 – 18 | 10:45 – 11:45 |
           | Irish Hard Shoe | 11 – 18 | 9:30 – 10:30 |
           | Jazz 1 | 9 – 12 | 9:30 – 10:30 |
