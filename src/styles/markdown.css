@@ -1,5 +1,7 @@
 .markdown {
     line-height: var(--leading-normal);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .markdown h1,
@@ -29,4 +31,39 @@
 .markdown a {
     text-decoration: underline;
     text-underline-offset: 0.15em;
+}
+
+.markdown table {
+    margin: var(--space-lg) 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    border-spacing: 0;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    font-size: var(--text-sm);
+    overflow: hidden;
+}
+
+.markdown th,
+.markdown td {
+    padding: var(--space-sm) var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.markdown th {
+    background-color: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+    font-weight: 700;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+}
+
+.markdown tbody tr:nth-child(even) {
+    background-color: var(--color-surface-alt);
+}
+
+.markdown tbody tr:last-child td {
+    border-bottom: 0;
 }

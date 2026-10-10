@@ -18,7 +18,7 @@ sections:
     blocks:
       - type: text
         text: >+
-          Check out our Slide Shows of Past Performances. All acting students
+          Check out our [Timeline](/timeline) of past performances. All acting students
           perform a variety of skits in our Showcase production, along with our
           dance and choir classes.
 

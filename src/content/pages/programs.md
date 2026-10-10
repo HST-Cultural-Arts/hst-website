@@ -21,13 +21,13 @@ sections:
           ### Acting
 
 
-          Acting classes for children ages 9 – 18.  [Learn more](./acting)
+          Acting classes for children ages 9 – 18.  [Learn more](/programs/acting)
 
 
           ### Dance
 
 
-          Dance classes in Jazz, Tap and Irish.   [Learn more](./dance)
+          Dance classes in Jazz, Tap and Irish.   [Learn more](/programs/dance)
 
 
           ### Choir
@@ -43,7 +43,7 @@ sections:
 
           We have troupes for middle and high school students who have taken at
           least one year of acting.  Audition required for most troupes.  [Learn
-          more](./troupes)
+          more](/programs/troupes)
 
 
           ### Tech
@@ -52,7 +52,7 @@ sections:
           For those who wish to work behind the scenes, we offer classes and
           workshops in varies aspects of backstage jobs, including make up,
           technical applications, set design, and stage management.  [Learn
-          more](./tech)
+          more](/programs/tech)
       - type: image
         image:
           src: /assets/uploads/images/programs.webp
