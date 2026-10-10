@@ -26,7 +26,7 @@ const { brand, navigation } = headerData;
         <ul>
             {navigation.ctaLinks.map((cta) => (
                 <li>
-                    <a href={cta.href}>{cta.label}</a>
+                    <a class="header-cta" href={cta.href}>{cta.label}</a>
                 </li>
             ))}
         </ul>
