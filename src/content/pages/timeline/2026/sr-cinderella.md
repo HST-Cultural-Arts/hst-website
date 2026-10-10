@@ -1,14 +1,14 @@
 ---
 title: Cinderella
 sections:
-  - color: dark
+  - color: navy
     blocks:
       - type: text
         text: |
           # Cinderella
 
           Senior Troupe - 2026
-  - color: light
+  - color: cream
     blocks:
       - type: gallery
         gallery:

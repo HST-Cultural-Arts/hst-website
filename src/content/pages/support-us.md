@@ -1,7 +1,7 @@
 ---
 title: Support Us
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -9,7 +9,7 @@ sections:
           # Support Us
 
           Your support helps make arts education available to more children.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text
@@ -17,7 +17,7 @@ sections:
           ## Make a Difference
 
           Your support helps make arts education available to more children in our community.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text
@@ -28,7 +28,7 @@ sections:
           - Safe rehearsal spaces
           - Theater rental fees
           - Other expenses to keep HST running smoothly
-  - color: light
+  - color: cream
     layout: 1col
     blocks:
       - type: button

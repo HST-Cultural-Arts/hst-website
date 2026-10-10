@@ -1,14 +1,14 @@
 ---
 title: Programs
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
         text: |+
           ## Programs
 
-  - color: light
+  - color: cream
     layout: 1col
     blocks:
       - type: text

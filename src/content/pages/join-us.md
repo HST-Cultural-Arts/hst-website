@@ -1,7 +1,7 @@
 ---
 title: Join Us
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -9,7 +9,7 @@ sections:
           # Join Us
 
           Explore your creativity, make new friends, and grow your confidence.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text
@@ -17,7 +17,7 @@ sections:
           ## Get Involved
 
           HST welcomes students who want to explore performance, make new friends, and grow their confidence.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text

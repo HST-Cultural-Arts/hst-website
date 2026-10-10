@@ -1,14 +1,14 @@
 ---
 title: Peter Pan
 sections:
-  - color: dark
+  - color: navy
     blocks:
       - type: text
         text: |
           # Peter Pan
 
           Gaithersburg Troupe · 2026
-  - color: light
+  - color: cream
     blocks:
       - type: gallery
         gallery:

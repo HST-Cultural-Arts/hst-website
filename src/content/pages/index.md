@@ -9,7 +9,7 @@ sections:
           # Welcome to HST Cultural Arts
 
           Dance • Acting • Troupes • Tech
-  - color: light
+  - color: cream
     layout: 2cols
     blocks:
       - type: text
@@ -26,13 +26,13 @@ sections:
           alt: HST Cultural Arts logo
           size: medium
           crop: natural
-  - color: light
+  - color: cream
     heading: Our Programs
     layout: 2cols
     blocks:
       - type: block
         block:
-          color: light
+          color: white
           blocks:
             - type: text
               text: "### Acting"
@@ -48,7 +48,7 @@ sections:
                 href: /programs/acting
       - type: block
         block:
-          color: light
+          color: white
           blocks:
             - type: text
               text: "### Dance"
@@ -64,7 +64,7 @@ sections:
                 href: /programs/dance
       - type: block
         block:
-          color: light
+          color: white
           blocks:
             - type: text
               text: "### Tech"
@@ -80,7 +80,7 @@ sections:
                 href: /programs/tech
       - type: block
         block:
-          color: light
+          color: white
           blocks:
             - type: text
               text: "### Troupes"

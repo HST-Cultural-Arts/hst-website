@@ -1,14 +1,14 @@
 ---
 title: Calendar
 sections:
-  - color: dark
+  - color: navy
     blocks:
       - type: text
         text: |
           # Calendar
 
           See what is happening with HST!
-  - color: light
+  - color: cream
     layout: 1col
     blocks:
       - type: button

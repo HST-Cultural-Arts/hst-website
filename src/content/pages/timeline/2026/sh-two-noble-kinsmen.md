@@ -1,14 +1,14 @@
 ---
 title: The Two Noble Kinsmen
 sections:
-  - color: dark
+  - color: navy
     blocks:
       - type: text
         text: |
           # The Two Noble Kinsmen
 
           Shakespeare Troupe - 2026
-  - color: light
+  - color: cream
     blocks:
       - type: gallery
         gallery:

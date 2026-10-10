@@ -1,7 +1,7 @@
 ---
 title: Timeline
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -9,7 +9,7 @@ sections:
           # Timeline
 
           Scroll down for a timeline of all our shows. Our timeline is a work in progress. Keep checking back for more pictures and links!
-  - color: light
+  - color: cream
     layout: 1col
     blocks:
       - type: timeline
@@ -17,7 +17,7 @@ sections:
           - year: 2026
             blocks:
               - block:
-                  color: light
+                  color: white
                   blocks:
                     - type: text
                       text: |
@@ -31,7 +31,7 @@ sections:
                         title: View Cinderella gallery
                         href: /timeline/2026/sr-cinderella/
               - block:
-                  color: light
+                  color: white
                   blocks:
                     - type: text
                       text: |
@@ -45,7 +45,7 @@ sections:
                         title: View Two Noble Kinsmen gallery
                         href: /timeline/2026/sh-two-noble-kinsmen/
               - block:
-                  color: light
+                  color: white
                   blocks:
                     - type: text
                       text: |
@@ -59,7 +59,7 @@ sections:
                         title: View Surf's Up gallery
                         href: /timeline/2026/jr-surfs-up/
               - block:
-                  color: light
+                  color: white
                   blocks:
                     - type: text
                       text: |
