@@ -31,6 +31,7 @@ sections:
       - type: block
         block:
           color: white
+          variant: card
           blocks:
             - type: text
               text: "### Acting"
@@ -47,6 +48,7 @@ sections:
       - type: block
         block:
           color: white
+          variant: card
           blocks:
             - type: text
               text: "### Dance"
@@ -63,6 +65,7 @@ sections:
       - type: block
         block:
           color: white
+          variant: card
           blocks:
             - type: text
               text: "### Tech"
@@ -79,6 +82,7 @@ sections:
       - type: block
         block:
           color: white
+          variant: card
           blocks:
             - type: text
               text: "### Troupes"
