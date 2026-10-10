@@ -36,6 +36,7 @@ export type GalleryData =
 
 export type BlockGroupData = {
   color?: "navy" | "cream" | "white" | "transparent";
+  variant?: "default" | "card";
   blocks?: ContentBlockData[];
 };
 
@@ -116,6 +117,7 @@ const timelineYearsSchema = () =>
                     color: z
                       .enum(["navy", "cream", "white", "transparent"])
                       .optional(),
+                    variant: z.enum(["default", "card"]).optional(),
                     blocks: z.array(contentBlockSchema).optional(),
                   }),
               )
@@ -140,6 +142,7 @@ const contentBlockSchema: ZodType<ContentBlockData> = z.lazy(
     block: z
       .object({
         color: z.enum(["navy", "cream", "white", "transparent"]).optional(),
+        variant: z.enum(["default", "card"]).optional(),
         blocks: z.array(contentBlockSchema).optional(),
       })
       .optional(),
