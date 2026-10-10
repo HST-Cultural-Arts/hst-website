@@ -1,64 +1,7 @@
 ---
 import "../styles/content-block.css";
-import Button from "./Button.astro";
-import Embed from "./Embed.astro";
-import Gallery from "./Gallery.astro";
-import Image from "./Image.astro";
-import Markdown from "./Markdown.astro";
-import Timeline from "./Timeline.astro";
-
-type ButtonData = {
-  href: string;
-  title: string;
-  type?: string;
-};
-
-type EmbedData = {
-  provider: "calendar" | "youtube";
-  src: string;
-  title: string;
-  size?: "small" | "medium" | "large" | "full";
-  height?: "short" | "medium" | "tall";
-};
-
-type GalleryImage = {
-  src: string;
-  alt?: string;
-};
-
-type CardData = {
-  heading: string;
-  image: {
-    src: string;
-    alt?: string;
-    size?: "small" | "medium" | "large" | "full";
-    crop?: "natural" | "landscape" | "square" | "portrait";
-  };
-  button: ButtonData;
-};
-
-type TimelineYear = {
-  year: number | string;
-  blocks?: Array<{
-    href?: string;
-    block?: ContentBlockData[];
-  }>;
-};
-
-type ContentBlockData = {
-  text?: string;
-  image?: {
-    src: string;
-    alt?: string;
-    size?: "small" | "medium" | "large" | "full";
-    crop?: "natural" | "landscape" | "square" | "portrait";
-  };
-  button?: ButtonData;
-  card?: CardData;
-  embed?: EmbedData;
-  gallery?: GalleryImage[];
-  years?: TimelineYear[];
-};
+import ContentBlockContent from "./ContentBlockContent.astro";
+import type { ContentBlockData } from "../content.config";
 
 const { block, className = "", variant = "transparent" } = Astro.props as {
   block?: ContentBlockData;
@@ -66,62 +9,26 @@ const { block, className = "", variant = "transparent" } = Astro.props as {
   variant?: "transparent" | "card";
 };
 
-const blockVariant = block?.card ? "card" : variant;
+const blockVariant = block?.block ? "card" : variant;
+const blockColor = block?.block?.color ?? "transparent";
 ---
 
-<section class:list={["content-block", `content-block--${blockVariant}`, className]}>
+<section
+  class:list={[
+    "content-block",
+    `content-block--${blockVariant}`,
+    `content-block-color--${blockColor}`,
+    className,
+  ]}
+>
   {block ? (
     <>
-      {block.card ? (
-        <>
-          <h3>{block.card.heading}</h3>
-          <Image
-            src={block.card.image.src}
-            alt={block.card.image.alt ?? ""}
-            size={block.card.image.size ?? "full"}
-            crop={block.card.image.crop ?? "landscape"}
-          />
-          <Button
-            href={block.card.button.href}
-            title={block.card.button.title}
-            type={block.card.button.type ?? "primary"}
-          />
-        </>
+      {block.block ? (
+        block.block.blocks?.map((nestedBlock) => (
+          <Astro.self block={nestedBlock} />
+        ))
       ) : (
-        <>
-          {block.text && <Markdown text={block.text} />}
-
-          {block.image?.src && (
-            <Image
-              src={block.image.src}
-              alt={block.image.alt ?? ""}
-              size={block.image.size}
-              crop={block.image.crop}
-            />
-          )}
-
-          {block.button && (
-            <Button
-              href={block.button.href}
-              title={block.button.title}
-              type={block.button.type ?? "primary"}
-            />
-          )}
-
-          {block.embed && (
-            <Embed
-              provider={block.embed.provider}
-              src={block.embed.src}
-              title={block.embed.title}
-              size={block.embed.size}
-              height={block.embed.height}
-            />
-          )}
-
-          {block.gallery?.length ? <Gallery images={block.gallery} /> : null}
-
-          {block.years?.length ? <Timeline years={block.years} /> : null}
-        </>
+        <ContentBlockContent block={block} />
       )}
 
     </>

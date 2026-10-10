@@ -38,20 +38,142 @@ components:
         options:
           values: [primary, secondary]
 
-  card:
+  gallery:
     type: object
-    label: Program card
+    label: Gallery
     fields:
-      - name: heading
-        label: Heading
-        type: string
-        required: true
-      - name: image
-        label: Image
-        component: image
-      - name: button
-        label: Button
-        component: button
+      - name: images
+        label: Gallery images (add one or more)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Image {index}"
+        fields:
+          - name: src
+            label: Image file
+            type: image
+            required: true
+          - name: alt
+            label: Accessibility text
+            type: string
+            description: Describe the image for screen readers. Leave blank only for decorative images.
+
+  contentblock:
+    type: object
+    label: Content block
+    fields:
+      - name: color
+        label: Block color
+        type: select
+        default: transparent
+        options:
+          values: [dark, light, transparent]
+        description: Choose a background color for this group of blocks.
+      - name: blocks
+        label: Nested content blocks (optional)
+        type: block
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Nested block {index}"
+        blockKey: type
+        blocks:
+          - name: text
+            label: Text block
+            component: text
+          - name: image
+            label: Image block
+            component: image
+          - name: button
+            label: Button block
+            component: button
+          - name: embed
+            label: Embed block
+            component: embed
+          - name: gallery
+            label: Gallery block
+            component: gallery
+          - name: block
+            label: Nested block
+            description: Add another group of content blocks.
+            component: contentblock2
+
+  contentblock2:
+    type: object
+    label: Content block 2
+    fields:
+      - name: color
+        label: Block color
+        type: select
+        default: transparent
+        options:
+          values: [dark, light, transparent]
+        description: Choose a background color for this group of blocks.
+      - name: blocks
+        label: Nested content blocks (optional)
+        type: block
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Nested block {index}"
+        blockKey: type
+        blocks:
+          - name: text
+            label: Text block
+            component: text
+          - name: image
+            label: Image block
+            component: image
+          - name: button
+            label: Button block
+            component: button
+          - name: embed
+            label: Embed block
+            component: embed
+          - name: gallery
+            label: Gallery block
+            component: gallery
+          - name: block
+            label: Nested block
+            description: Add one final group of content blocks.
+            component: contentblock3
+
+  contentblock3:
+    type: object
+    label: Content block 3
+    fields:
+      - name: color
+        label: Block color
+        type: select
+        default: transparent
+        options:
+          values: [dark, light, transparent]
+        description: Choose a background color for this group of blocks.
+      - name: blocks
+        label: Nested content blocks (optional)
+        type: block
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Nested block {index}"
+        blockKey: type
+        blocks:
+          - name: text
+            label: Text block
+            component: text
+          - name: image
+            label: Image block
+            component: image
+          - name: button
+            label: Button block
+            component: button
+          - name: embed
+            label: Embed block
+            component: embed
+          - name: gallery
+            label: Gallery block
+            component: gallery
 
   image:
     type: object
@@ -203,33 +325,17 @@ components:
             fields:
               - name: button
                 component: button
-          - name: card
-            label: Card block
-            description: Display a heading, image, and button together as a card.
-            component: card
+          - name: block
+            label: Content block
+            description: Group more text, images, galleries, buttons, or content blocks.
+            component: contentblock
           - name: embed
             label: Embed block
             component: embed
           - name: gallery
             label: Gallery block
             description: Display multiple images as a slideshow gallery.
-            fields:
-              - name: gallery
-                label: Gallery images (add one or more)
-                type: object
-                list:
-                  collapsible:
-                    collapsed: true
-                    summary: "Image {index}"
-                fields:
-                  - name: src
-                    label: Image file
-                    type: image
-                    required: true
-                  - name: alt
-                    label: Accessibility text
-                    type: string
-                    description: Describe the image for screen readers. Leave blank only for decorative images.
+            component: gallery
           - name: timeline
             label: Timeline block
             description: Display dated entries with text, images, buttons, or embeds.
@@ -257,29 +363,7 @@ components:
                     fields:
                       - name: block
                         label: Entry content
-                        type: block
-                        list:
-                          collapsible:
-                            collapsed: true
-                            summary: "Content block {index}"
-                        blockKey: type
-                        blocks:
-                          - name: text
-                            label: Text block
-                            component: text
-                          - name: image
-                            label: Image block
-                            fields:
-                              - name: image
-                                component: image
-                          - name: button
-                            label: Button block
-                            fields:
-                              - name: button
-                                component: button
-                          - name: embed
-                            label: Embed block
-                            component: embed
+                        component: contentblock
 content:
   - name: pages
     label: Pages

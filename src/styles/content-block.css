@@ -10,7 +10,30 @@
     padding: var(--space-lg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    background-color: var(--color-surface);
     box-shadow: var(--shadow-md);
 }
 
+.content-block-color--transparent {
+    background-color: transparent;
+}
+
+.content-block-color--light {
+    background-color: var(--color-surface);
+    color: var(--color-text-body);
+}
+
+.content-block-color--dark {
+    background-color: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+}
+
+.content-block-color--dark h1,
+.content-block-color--dark h2,
+.content-block-color--dark h3,
+.content-block-color--dark h4 {
+    color: var(--color-text-inverse);
+}
+
+.content-block-color--dark p {
+    color: var(--color-text-inverse-muted);
+}

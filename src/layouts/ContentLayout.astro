@@ -1,66 +1,9 @@
 ---
 import PageLayout from "./PageLayout.astro";
 import ContentSection from "../components/ContentSection.astro";
+import type { PageFrontmatter } from "../content.config";
 
-type ContentBlock = {
-  text?: string;
-  image?: {
-    src: string;
-    alt?: string;
-    size?: "small" | "medium" | "large" | "full";
-    crop?: "natural" | "landscape" | "square" | "portrait";
-  };
-  button?: {
-    href: string;
-    title: string;
-    type?: string;
-  };
-  card?: {
-    heading: string;
-    image: {
-      src: string;
-      alt?: string;
-      size?: "small" | "medium" | "large" | "full";
-      crop?: "natural" | "landscape" | "square" | "portrait";
-    };
-    button: {
-      href: string;
-      title: string;
-      type?: string;
-    };
-  };
-  embed?: {
-    provider: "calendar" | "youtube";
-    src: string;
-    title: string;
-    size?: "small" | "medium" | "large" | "full";
-    height?: "short" | "medium" | "tall";
-  };
-  gallery?: Array<{
-    src: string;
-    alt?: string;
-  }>;
-  years?: Array<{
-    year: number | string;
-    blocks?: Array<{
-      block?: ContentBlock[];
-    }>;
-  }>;
-};
-
-type Section = {
-  color: "dark" | "light";
-  heading?: string;
-  layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
-  blocks?: ContentBlock[];
-};
-
-type Frontmatter = {
-  title: string;
-  sections?: Section[];
-};
-
-const frontmatter = Astro.props.frontmatter as Frontmatter;
+const frontmatter = Astro.props.frontmatter as PageFrontmatter;
 const { title, sections = [] } = frontmatter;
 ---
 
