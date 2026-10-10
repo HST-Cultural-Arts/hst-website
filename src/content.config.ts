@@ -47,7 +47,6 @@ export type ContentBlockData = {
   embed?: EmbedData;
   gallery?: GalleryData;
   block?: BlockGroupData;
-  timeline?: TimelineData;
   years?: TimelineYear[];
 };
 
@@ -56,10 +55,6 @@ export type TimelineYear = {
   blocks?: Array<{
     block?: BlockGroupData;
   }>;
-};
-
-export type TimelineData = {
-  years?: TimelineYear[];
 };
 
 export type Section = {
@@ -148,7 +143,6 @@ const contentBlockSchema: ZodType<ContentBlockData> = z.lazy(
         blocks: z.array(contentBlockSchema).optional(),
       })
       .optional(),
-    timeline: z.object({ years: timelineYearsSchema().optional() }).optional(),
     years: timelineYearsSchema().optional(),
   }),
 );
