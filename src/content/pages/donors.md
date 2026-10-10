@@ -1,7 +1,7 @@
 ---
 title: Silent Auction Donors
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -9,7 +9,7 @@ sections:
           # 2024–25 Silent Auction Donors
 
           HST thanks our 2024–25 Silent Auction Donors.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text

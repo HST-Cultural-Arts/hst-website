@@ -1,7 +1,7 @@
 ---
 title: Tech
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -9,7 +9,7 @@ sections:
           # Tech
 
           Our tech program is available for those who want to learn more about working behind the scenes. We offer workshops and classes that prepare your student to work backstage for one of our troupe or Showcase performances.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text

@@ -1,7 +1,7 @@
 ---
 title: Contact
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -9,7 +9,7 @@ sections:
           # Contact
 
           We would love to hear from you.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text

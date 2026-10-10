@@ -42,7 +42,7 @@ export type ContentBlockData = {
   embed?: EmbedData;
   gallery?: GalleryData;
   block?: {
-    color?: "dark" | "light" | "transparent";
+    color?: "navy" | "cream" | "white" | "transparent";
     blocks?: ContentBlockData[];
   };
   years?: TimelineYear[];
@@ -56,7 +56,7 @@ export type TimelineYear = {
 };
 
 export type Section = {
-  color: "dark" | "light" | "home-hero";
+  color: "navy" | "cream" | "white" | "home-hero";
   heading?: string;
   layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
   blocks?: ContentBlockData[];
@@ -113,7 +113,7 @@ const contentBlockSchema: ZodType<ContentBlockData> = z.lazy(
     gallery: gallerySchema.optional(),
     block: z
       .object({
-        color: z.enum(["dark", "light", "transparent"]).optional(),
+        color: z.enum(["navy", "cream", "white", "transparent"]).optional(),
         blocks: z.array(contentBlockSchema).optional(),
       })
       .optional(),
@@ -135,7 +135,7 @@ const contentBlockSchema: ZodType<ContentBlockData> = z.lazy(
 );
 
 const sectionSchema = z.object({
-  color: z.enum(["dark", "light", "home-hero"]),
+  color: z.enum(["navy", "cream", "white", "home-hero"]),
   heading: z.string().optional(),
   layout: z.enum(["auto", "1col", "2cols", "3cols", "4cols", "5cols"]).optional(),
   blocks: z.array(contentBlockSchema).optional(),

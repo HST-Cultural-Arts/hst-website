@@ -1,14 +1,14 @@
 ---
 title: Threads Left Unsewn
 sections:
-  - color: dark
+  - color: navy
     blocks:
       - type: text
         text: |
           # Threads Left Unsewn
 
           Theatre Honors - 2026
-  - color: light
+  - color: cream
     blocks:
       - type: gallery
         gallery:

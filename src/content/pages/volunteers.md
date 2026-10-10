@@ -1,14 +1,14 @@
 ---
 title: Volunteers
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
         text: |+
           # Volunteers
 
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text

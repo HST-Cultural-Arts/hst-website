@@ -1,7 +1,7 @@
 ---
 title: About
 sections:
-  - color: dark
+  - color: navy
     layout: auto
     blocks:
       - type: text
@@ -11,7 +11,7 @@ sections:
 
           Helping homeschool students discover confidence through the cultural
           arts.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text
@@ -28,7 +28,7 @@ sections:
 
           HST offers a variety of classes in the Rockville/Derwood area for
           homeschooled children and those with flexible schedules, ages 9–18.
-  - color: light
+  - color: cream
     layout: auto
     blocks:
       - type: text

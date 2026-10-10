@@ -1,14 +1,14 @@
 ---
 title: Surf's Up
 sections:
-  - color: dark
+  - color: navy
     blocks:
       - type: text
         text: |
           # Surf's Up
 
           Junior Troupe · 2026
-  - color: light
+  - color: cream
     blocks:
       - type: gallery
         gallery:

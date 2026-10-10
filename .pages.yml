@@ -68,7 +68,7 @@ components:
         type: select
         default: transparent
         options:
-          values: [dark, light, transparent]
+          values: [navy, cream, white, transparent]
         description: Choose a background color for this group of blocks.
       - name: blocks
         label: Nested content blocks (optional)
@@ -108,7 +108,7 @@ components:
         type: select
         default: transparent
         options:
-          values: [dark, light, transparent]
+          values: [navy, cream, white, transparent]
         description: Choose a background color for this group of blocks.
       - name: blocks
         label: Nested content blocks (optional)
@@ -148,7 +148,7 @@ components:
         type: select
         default: transparent
         options:
-          values: [dark, light, transparent]
+          values: [navy, cream, white, transparent]
         description: Choose a background color for this group of blocks.
       - name: blocks
         label: Nested content blocks (optional)
@@ -275,10 +275,10 @@ components:
         label: Section color
         type: select
         required: true
-        default: light
+        default: cream
         options:
-          values: [dark, light, home-hero]
-        description: The color of the section, dark or light.
+          values: [navy, cream, white, home-hero]
+        description: Choose the section background color.
       - name: heading
         label: Section heading
         type: string
