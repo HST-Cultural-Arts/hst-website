@@ -399,7 +399,7 @@ components:
             - name: 5cols
               label: 5 columns
       - name: blocks
-        label: Content blocks (optional)
+        label: Content blocks
         type: block
         list:
           collapsible:

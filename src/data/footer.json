@@ -10,10 +10,10 @@
       {
         "heading": "Explore",
         "links": [
-          { "label": "Home", "href": "/" },
           { "label": "About", "href": "/about" },
-          { "label": "Join Us", "href": "/join-us" },
-          { "label": "Support Us", "href": "/support-us" }
+          { "label": "Calendar", "href": "/calendar" },
+          { "label": "Support Us", "href": "/support-us" },
+          { "label": "Contact", "href": "/contact" }
         ]
       },
       {
@@ -26,12 +26,20 @@
         ]
       },
       {
+        "heading": "Get Involved",
+        "links": [
+          { "label": "Join Us", "href": "/join-us" },
+          { "label": "Volunteers", "href": "/volunteers" },
+          { "label": "Support Us", "href": "/support-us" },
+          { "label": "Donors", "href": "/donors" }
+        ]
+      },
+      {
         "heading": "Contact",
         "links": [
-          { "label": "hstalents@gmail.com" },
-          { "label": "240-997-5796" },
-          { "label": "P.O. Box 150" },
-          { "label": "Rockville, MD 20848" }
+          { "label": "hstalents@gmail.com", "href": "mailto:hstalents@gmail.com" },
+          { "label": "240-997-5796", "href": "tel:240-997-5796" },
+          { "label": "P.O. Box 150, Rockville, MD 20848" }
         ]
       }
     ]
