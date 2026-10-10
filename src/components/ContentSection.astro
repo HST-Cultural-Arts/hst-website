@@ -2,46 +2,14 @@
 import "../styles/content-section.css";
 
 import ContentBlock from "./ContentBlock.astro";
-
-type ContentBlockData = {
-  text?: string;
-  image?: {
-    src: string;
-    alt?: string;
-    size?: "small" | "medium" | "large" | "full";
-    crop?: "natural" | "landscape" | "square" | "portrait";
-  };
-  button?: {
-    href: string;
-    title: string;
-    type?: string;
-  };
-  embed?: {
-    provider: "calendar" | "youtube";
-    src: string;
-    title: string;
-    size?: "small" | "medium" | "large" | "full";
-    height?: "short" | "medium" | "tall";
-  };
-  gallery?: Array<{
-    src: string;
-    alt?: string;
-  }>;
-};
-
-type Props = {
-  color?: string;
-  heading?: string;
-  layout?: string;
-  blocks?: ContentBlockData[];
-};
+import type { Section } from "../content.config";
 
 const {
   color = "light",
   heading,
   layout = "auto",
   blocks = [],
-} = Astro.props as Props;
+} = Astro.props as Section;
 ---
 
 <section

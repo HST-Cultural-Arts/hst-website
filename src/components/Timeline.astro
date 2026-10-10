@@ -1,34 +1,9 @@
 ---
 import ContentBlock from "./ContentBlock.astro";
 import "../styles/timeline.css";
+import type { TimelineYear } from "../content.config";
 
-type ContentBlockData = {
-  text?: string;
-  image?: {
-    src: string;
-    alt?: string;
-    size?: "small" | "medium" | "large" | "full";
-    crop?: "natural" | "landscape" | "square" | "portrait";
-  };
-  button?: {
-    href: string;
-    title: string;
-    type?: string;
-  };
-};
-
-type TimelineCard = {
-  block?: ContentBlockData[];
-};
-
-type TimelineYear = {
-  year: number | string;
-  blocks?: TimelineCard[];
-};
-
-const { years = [] } = Astro.props as {
-  years?: TimelineYear[];
-};
+const { years = [] } = Astro.props as { years?: TimelineYear[] };
 ---
 
 <div class="timeline">
@@ -49,9 +24,7 @@ const { years = [] } = Astro.props as {
                   : "timeline__card--right",
               ]}
             >
-              <ContentBlock variant="card">
-                {card.block?.map((block) => <ContentBlock block={block} />)}
-              </ContentBlock>
+              {card.block && <ContentBlock block={card.block} variant="card" />}
             </article>
           ))}
         </div>

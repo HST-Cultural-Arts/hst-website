@@ -30,48 +30,68 @@ sections:
     heading: Our Programs
     layout: 2cols
     blocks:
-      - type: card
-        card:
-          heading: Acting
-          image:
-            src: /assets/uploads/images/homepage/acting.webp
-            alt: Students performing in an acting production
-            size: full
-            crop: landscape
-          button:
-            title: Learn about Acting
-            href: /programs/acting
-      - type: card
-        card:
-          heading: Dance
-          image:
-            src: /assets/uploads/images/homepage/dance.webp
-            alt: Students performing a dance routine
-            size: full
-            crop: landscape
-          button:
-            title: Learn about Dance
-            href: /programs/dance
-      - type: card
-        card:
-          heading: Tech
-          image:
-            src: /assets/uploads/images/homepage/tech.webp
-            alt: Students working on tech
-            size: full
-            crop: landscape
-          button:
-            title: Learn about Tech
-            href: /programs/tech
-      - type: card
-        card:
-          heading: Troupes
-          image:
-            src: /assets/uploads/images/homepage/troupes.webp
-            alt: HST student troupe members performing together
-            size: full
-            crop: landscape
-          button:
-            title: Learn about Troupes
-            href: /programs/troupes
+      - type: block
+        block:
+          color: light
+          blocks:
+            - type: text
+              text: "### Acting"
+            - type: image
+              image:
+                src: /assets/uploads/images/homepage/acting.webp
+                alt: Students performing in an acting production
+                size: full
+                crop: landscape
+            - type: button
+              button:
+                title: Learn about Acting
+                href: /programs/acting
+      - type: block
+        block:
+          color: light
+          blocks:
+            - type: text
+              text: "### Dance"
+            - type: image
+              image:
+                src: /assets/uploads/images/homepage/dance.webp
+                alt: Students performing a dance routine
+                size: full
+                crop: landscape
+            - type: button
+              button:
+                title: Learn about Dance
+                href: /programs/dance
+      - type: block
+        block:
+          color: light
+          blocks:
+            - type: text
+              text: "### Tech"
+            - type: image
+              image:
+                src: /assets/uploads/images/homepage/tech.webp
+                alt: Students working on tech
+                size: full
+                crop: landscape
+            - type: button
+              button:
+                title: Learn about Tech
+                href: /programs/tech
+      - type: block
+        block:
+          color: light
+          blocks:
+            - type: text
+              text: "### Troupes"
+            - type: image
+              image:
+                src: /assets/uploads/images/homepage/troupes.webp
+                alt: HST student troupe members performing together
+                size: full
+                crop: landscape
+            - type: button
+              button:
+                title: Learn about Troupes
+                href: /programs/troupes
 ---
