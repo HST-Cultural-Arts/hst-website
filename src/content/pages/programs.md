@@ -27,7 +27,7 @@ sections:
           ### Dance
 
 
-          Dance classes in jazz, tap, Irish, and hip hop.   [Learn more](./dance)
+          Dance classes in Jazz, Tap and Irish.   [Learn more](./dance)
 
 
           ### Choir
@@ -51,7 +51,8 @@ sections:
 
           For those who wish to work behind the scenes, we offer classes and
           workshops in varies aspects of backstage jobs, including make up,
-          technical applications, set design, and stage management.  [Learn more](./tech)
+          technical applications, set design, and stage management.  [Learn
+          more](./tech)
       - type: image
         image:
           src: /assets/uploads/images/programs.webp
