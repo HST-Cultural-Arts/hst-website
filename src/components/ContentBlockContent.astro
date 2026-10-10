@@ -11,6 +11,7 @@ const { block } = Astro.props as { block: ContentBlockData };
 const galleryImages = Array.isArray(block.gallery)
   ? block.gallery
   : block.gallery?.images ?? [];
+const galleryOptions = !Array.isArray(block.gallery) ? block.gallery : undefined;
 ---
 
 {block.text && <Markdown text={block.text} />}
@@ -42,6 +43,17 @@ const galleryImages = Array.isArray(block.gallery)
   />
 )}
 
-{galleryImages.length ? <Gallery images={galleryImages} /> : null}
+{galleryImages.length ? (
+  <Gallery
+    images={galleryImages}
+    size={galleryOptions?.size}
+    crop={galleryOptions?.crop}
+    controls={galleryOptions?.controls}
+    indicators={galleryOptions?.indicators}
+    autoScroll={galleryOptions?.autoScroll}
+    autoScrollInterval={galleryOptions?.autoScrollInterval}
+    pauseOnHover={galleryOptions?.pauseOnHover}
+  />
+) : null}
 
 {block.years?.length ? <Timeline years={block.years} /> : null}

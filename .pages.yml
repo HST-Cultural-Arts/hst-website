@@ -58,6 +58,41 @@ components:
             label: Accessibility text
             type: string
             description: Describe the image for screen readers. Leave blank only for decorative images.
+      - name: size
+        label: Gallery width
+        type: select
+        default: large
+        options:
+          values: [small, medium, large, full]
+        description: Controls the gallery's maximum width.
+      - name: crop
+        label: Image crop
+        type: select
+        default: natural
+        options:
+          values: [natural, landscape, square, portrait]
+        description: Natural shows each image without cropping.
+      - name: controls
+        label: Show arrow controls
+        type: boolean
+        default: true
+      - name: indicators
+        label: Show slide indicators
+        type: boolean
+        default: true
+      - name: autoScroll
+        label: Auto-scroll
+        type: boolean
+        default: false
+      - name: autoScrollInterval
+        label: Auto-scroll interval
+        type: number
+        default: 5000
+        description: Time between slides in milliseconds.
+      - name: pauseOnHover
+        label: Pause on hover
+        type: boolean
+        default: true
 
   contentblock:
     type: object
