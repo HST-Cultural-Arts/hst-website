@@ -24,7 +24,12 @@ const { years = [] } = Astro.props as { years?: TimelineYear[] };
                   : "timeline__card--right",
               ]}
             >
-              {card.block && <ContentBlock block={card.block} variant="card" />}
+              {card.block && (
+                <ContentBlock
+                  block={{ type: "block", block: card.block }}
+                  variant="card"
+                />
+              )}
             </article>
           ))}
         </div>

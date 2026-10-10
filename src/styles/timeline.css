@@ -33,6 +33,11 @@
     background-color: var(--color-surface-inverse);
     color: var(--color-text-inverse);
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.timeline__year-label:hover {
+    transform: scale(1.05);
 }
 
 .timeline__year-label h2 {
