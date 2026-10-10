@@ -294,7 +294,42 @@ components:
             fields:
               - name: block
                 label: Entry content
-                component: contentblock
+                type: object
+                fields:
+                  - name: color
+                    label: Block color
+                    type: select
+                    default: white
+                    options:
+                      values: [navy, cream, white, transparent]
+                  - name: blocks
+                    label: Entry content blocks (optional)
+                    type: block
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "Content block {index}"
+                    blockKey: type
+                    blocks:
+                      - name: text
+                        label: Text block
+                        component: text
+                      - name: image
+                        label: Image block
+                        fields:
+                          - name: image
+                            component: image
+                      - name: button
+                        label: Button block
+                        fields:
+                          - name: button
+                            component: button
+                      - name: embed
+                        label: Embed block
+                        component: embed
+                      - name: gallery
+                        label: Gallery block
+                        component: gallery
 
   section:
     type: object
