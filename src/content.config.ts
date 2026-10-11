@@ -39,6 +39,14 @@ export type Gallery = {
   pauseOnHover?: boolean;
 };
 
+export type Layout =
+  | "auto"
+  | "1col"
+  | "2cols"
+  | "3cols"
+  | "4cols"
+  | "5cols";
+
 export type ContentBlock =
   | {
       type: "text";
@@ -60,6 +68,7 @@ export type ContentBlock =
       type: "block";
       color?: "navy" | "cream" | "white" | "transparent";
       variant?: "default" | "card";
+      layout?: Layout;
       blocks?: ContentBlock[];
     }
   | {
@@ -73,9 +82,8 @@ export type Timeline = {
 };
 
 export type ContentSection = {
-  color: "navy" | "cream" | "white" | "home-hero";
-  heading?: string;
-  layout?: "auto" | "1col" | "2cols" | "3cols" | "4cols" | "5cols";
+  color: "navy" | "cream" | "white" | "halos";
+  layout?: Layout;
   blocks?: ContentBlock[];
 };
 
@@ -106,6 +114,15 @@ const gallerySchema = z.object({
     autoScrollInterval: z.number().optional(),
     pauseOnHover: z.boolean().optional(),
 });
+
+const layoutSchema = z.enum([
+  "auto",
+  "1col",
+  "2cols",
+  "3cols",
+  "4cols",
+  "5cols",
+]);
 
 const timelineYearsSchema = () =>
   z.array(
@@ -150,6 +167,7 @@ const contentBlockSchema: ZodType<ContentBlock> = z.lazy(
           .enum(["navy", "cream", "white", "transparent"])
           .optional(),
         variant: z.enum(["default", "card"]).optional(),
+        layout: layoutSchema.optional(),
         blocks: z.array(contentBlockSchema).optional(),
       }),
       z.object({
@@ -168,9 +186,8 @@ const timelineBlockSchema = z.lazy(() =>
 );
 
 const contentSectionSchema = z.object({
-  color: z.enum(["navy", "cream", "white", "home-hero"]),
-  heading: z.string().optional(),
-  layout: z.enum(["auto", "1col", "2cols", "3cols", "4cols", "5cols"]).optional(),
+  color: z.enum(["navy", "cream", "white", "halos"]),
+  layout: layoutSchema.optional(),
   blocks: z.array(contentBlockSchema).optional(),
 });
 

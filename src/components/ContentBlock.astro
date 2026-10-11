@@ -13,6 +13,7 @@ const blockVariant =
   block?.type === "block" ? block.variant ?? variant : variant;
 const blockColor =
   block?.type === "block" ? block.color ?? "transparent" : "transparent";
+const blockLayout = block?.type === "block" ? block.layout ?? "1col" : "1col";
 ---
 
 <section
@@ -20,6 +21,7 @@ const blockColor =
     "content-block",
     `content-block--${blockVariant}`,
     `content-block-color--${blockColor}`,
+    `content-layout--${blockLayout}`,
     className,
   ]}
 >

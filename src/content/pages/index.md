@@ -1,12 +1,17 @@
 ---
 title: Home
 sections:
-  - color: home-hero
-    layout: auto
+  - color: halos
+    layout: 1col
     blocks:
+      - type: image
+        src: /assets/brand/HST-logo-white.png
+        alt: HST Cultural Arts logo
+        size: small
+        crop: natural
       - type: text
         text: |
-          # Welcome to HST Cultural Arts
+          # Cultural Arts
   - color: cream
     layout: 2cols
     blocks:
@@ -24,7 +29,6 @@ sections:
         size: medium
         crop: natural
   - color: cream
-    heading: Our Programs
     layout: 2cols
     blocks:
       - type: block
