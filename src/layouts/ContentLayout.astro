@@ -3,18 +3,21 @@ import PageLayout from "./PageLayout.astro";
 import ContentSection from "../components/ContentSection.astro";
 import type { PageFrontmatter } from "../content.config";
 
-const frontmatter = Astro.props.frontmatter as PageFrontmatter;
+const { frontmatter, homeHero = false } = Astro.props as {
+  frontmatter: PageFrontmatter;
+  homeHero?: boolean;
+};
 const { title, sections = [] } = frontmatter;
 ---
 
 <PageLayout title={`${title} - HST Cultural Arts`}>
   {
-    sections.map((section) => (
+    sections.map((section, index) => (
       <ContentSection
         color={section.color}
-        heading={section.heading}
         layout={section.layout}
         blocks={section.blocks}
+        className={homeHero && index === 0 ? "content-section--home-hero" : ""}
       />
     ))
   }

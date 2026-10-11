@@ -8,8 +8,14 @@ const { timeline = [] } = Astro.props as { timeline?: Timeline[] };
 
 <div class="timeline">
   {timeline.map((year) => (
-    <section class="timeline__year" aria-labelledby={`timeline-year-${year.year}`}>
-      <div class="timeline__year-label" id={`timeline-year-${year.year}`}>
+    <section
+      class="timeline__year"
+      aria-labelledby={`timeline-year-${year.year}`}
+    >
+      <div
+        class="timeline__year-label"
+        id={`timeline-year-${year.year}`}
+      >
         <h2>{year.year}</h2>
       </div>
 

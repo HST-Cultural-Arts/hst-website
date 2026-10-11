@@ -6,24 +6,20 @@ import type { ContentSection } from "../content.config";
 
 const {
   color = "cream",
-  heading,
   layout = "auto",
   blocks = [],
-} = Astro.props as ContentSection;
+  className = "",
+} = Astro.props as ContentSection & { className?: string };
 ---
 
 <section
   class:list={[
     "content-section",
     `content-section--${color}`,
+    `content-layout--${layout}`,
+    className,
   ]}
 >
-  {heading && <h2 class="content-section__heading">{heading}</h2>}
-
-  <div class:list={["content-section__blocks", `content-section-layout--${layout}`]}>
-    {blocks.length > 0 &&
-      blocks.map((block) => <ContentBlock block={block} />)
-    }
-    <slot />
-  </div>
+  {blocks.length > 0 && blocks.map((block) => <ContentBlock block={block} />)}
+  <slot />
 </section>

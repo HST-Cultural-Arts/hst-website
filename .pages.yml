@@ -112,6 +112,25 @@ components:
         options:
           values: [default, card]
         description: Default is for layout only. Card adds padding, borders, shadow, and hover styling.
+      - name: layout
+        label: Layout
+        type: select
+        default: 1col
+        description: Choose how the nested blocks are arranged.
+        options:
+          values:
+            - name: auto
+              label: Automatic
+            - name: 1col
+              label: 1 column
+            - name: 2cols
+              label: 2 columns
+            - name: 3cols
+              label: 3 columns
+            - name: 4cols
+              label: 4 columns
+            - name: 5cols
+              label: 5 columns
       - name: blocks
         label: Nested content blocks (optional)
         type: block
@@ -159,6 +178,25 @@ components:
         options:
           values: [default, card]
         description: Default is for layout only. Card adds padding, borders, shadow, and hover styling.
+      - name: layout
+        label: Layout
+        type: select
+        default: 1col
+        description: Choose how the nested blocks are arranged.
+        options:
+          values:
+            - name: auto
+              label: Automatic
+            - name: 1col
+              label: 1 column
+            - name: 2cols
+              label: 2 columns
+            - name: 3cols
+              label: 3 columns
+            - name: 4cols
+              label: 4 columns
+            - name: 5cols
+              label: 5 columns
       - name: blocks
         label: Nested content blocks (optional)
         type: block
@@ -206,6 +244,25 @@ components:
         options:
           values: [default, card]
         description: Default is for layout only. Card adds padding, borders, shadow, and hover styling.
+      - name: layout
+        label: Layout
+        type: select
+        default: 1col
+        description: Choose how the nested blocks are arranged.
+        options:
+          values:
+            - name: auto
+              label: Automatic
+            - name: 1col
+              label: 1 column
+            - name: 2cols
+              label: 2 columns
+            - name: 3cols
+              label: 3 columns
+            - name: 4cols
+              label: 4 columns
+            - name: 5cols
+              label: 5 columns
       - name: blocks
         label: Nested content blocks (optional)
         type: block
@@ -369,6 +426,25 @@ components:
                 options:
                   values: [default, card]
                 description: Default is for layout only. Card adds padding, borders, shadow, and hover styling.
+              - name: layout
+                label: Layout
+                type: select
+                default: 1col
+                description: Choose how the entry blocks are arranged.
+                options:
+                  values:
+                    - name: auto
+                      label: Automatic
+                    - name: 1col
+                      label: 1 column
+                    - name: 2cols
+                      label: 2 columns
+                    - name: 3cols
+                      label: 3 columns
+                    - name: 4cols
+                      label: 4 columns
+                    - name: 5cols
+                      label: 5 columns
               - name: blocks
                 label: Entry content blocks (optional)
                 type: block
@@ -404,12 +480,8 @@ components:
         required: true
         default: cream
         options:
-          values: [navy, cream, white, home-hero]
+          values: [navy, cream, white, halos]
         description: Choose the section background color.
-      - name: heading
-        label: Section heading
-        type: string
-        description: (Optional) The heading for the section. Useful for grid layouts where you want a main section heading.
       - name: layout
         label: Layout
         type: select
