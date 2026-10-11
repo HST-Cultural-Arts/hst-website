@@ -512,9 +512,7 @@ content:
     path: src/content/pages
     subfolders: true
     format: yaml-frontmatter
-    filename:
-      template: "{primary}.md"
-      field: create
+    filename: "{fields.title}.md"
     view:
       primary: title
       fields: [title]
@@ -523,10 +521,7 @@ content:
         label: Page title
         type: string
         required: true
-        description: >
-          Enter the complete filename above, generally based on the page's name.
-          Use a root filename such as programs.md or timeline.md for a section
-          landing page. The ".md" is the file extension for Markdown files.
+        description: The page title also determines the lowercase, dash-separated filename.
       - name: sections
         label: Page sections
         component: section
