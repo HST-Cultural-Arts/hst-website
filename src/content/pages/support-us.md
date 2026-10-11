@@ -32,13 +32,11 @@ sections:
     layout: 1col
     blocks:
       - type: button
-        button:
-          title: Donate Now
-          href: https://www.paypal.com/donate/?hosted_button_id=D4Z4LCKWX2RTC
-          type: primary
+        title: Donate Now
+        href: https://www.paypal.com/donate/?hosted_button_id=D4Z4LCKWX2RTC
+        variant: primary
       - type: button
-        button:
-          title: View Past Donors
-          href: /donors
-          type: primary
+        title: View Past Donors
+        href: /donors
+        variant: primary
 ---

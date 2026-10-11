@@ -5,55 +5,53 @@ import Gallery from "./Gallery.astro";
 import Image from "./Image.astro";
 import Markdown from "./Markdown.astro";
 import Timeline from "./Timeline.astro";
-import type { ContentBlockData } from "../content.config";
+import type { ContentBlock } from "../content.config";
 
-const { block } = Astro.props as { block: ContentBlockData };
-const galleryImages = Array.isArray(block.gallery)
-  ? block.gallery
-  : block.gallery?.images ?? [];
-const galleryOptions = !Array.isArray(block.gallery) ? block.gallery : undefined;
+const { block } = Astro.props as { block: ContentBlock };
 ---
 
-{block.text && <Markdown text={block.text} />}
+{block.type === "text" && <Markdown text={block.text} />}
 
-{block.image?.src && (
+{block.type === "image" && block.src && (
   <Image
-    src={block.image.src}
-    alt={block.image.alt ?? ""}
-    size={block.image.size}
-    crop={block.image.crop}
+    src={block.src}
+    alt={block.alt ?? ""}
+    size={block.size}
+    crop={block.crop}
   />
 )}
 
-{block.button && (
+{block.type === "button" && (
   <Button
-    href={block.button.href}
-    title={block.button.title}
-    type={block.button.type ?? "primary"}
+    href={block.href}
+    title={block.title}
+    variant={block.variant ?? "primary"}
   />
 )}
 
-{block.embed && (
+{block.type === "embed" && (
   <Embed
-    provider={block.embed.provider}
-    src={block.embed.src}
-    title={block.embed.title}
-    size={block.embed.size}
-    height={block.embed.height}
+    provider={block.provider}
+    src={block.src}
+    title={block.title}
+    size={block.size}
+    height={block.height}
   />
 )}
 
-{galleryImages.length ? (
+{block.type === "gallery" && block.images.length ? (
   <Gallery
-    images={galleryImages}
-    size={galleryOptions?.size}
-    crop={galleryOptions?.crop}
-    controls={galleryOptions?.controls}
-    indicators={galleryOptions?.indicators}
-    autoScroll={galleryOptions?.autoScroll}
-    autoScrollInterval={galleryOptions?.autoScrollInterval}
-    pauseOnHover={galleryOptions?.pauseOnHover}
+    images={block.images}
+    size={block.size}
+    crop={block.crop}
+    controls={block.controls}
+    indicators={block.indicators}
+    autoScroll={block.autoScroll}
+    autoScrollInterval={block.autoScrollInterval}
+    pauseOnHover={block.pauseOnHover}
   />
 ) : null}
 
-{block.years?.length ? <Timeline years={block.years} /> : null}
+{block.type === "timeline" && block.timeline?.length ? (
+  <Timeline timeline={block.timeline} />
+) : null}

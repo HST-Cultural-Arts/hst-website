@@ -1,13 +1,13 @@
 ---
 import ContentBlock from "./ContentBlock.astro";
 import "../styles/timeline.css";
-import type { TimelineYear } from "../content.config";
+import type { Timeline } from "../content.config";
 
-const { years = [] } = Astro.props as { years?: TimelineYear[] };
+const { timeline = [] } = Astro.props as { timeline?: Timeline[] };
 ---
 
 <div class="timeline">
-  {years.map((year) => (
+  {timeline.map((year) => (
     <section class="timeline__year" aria-labelledby={`timeline-year-${year.year}`}>
       <div class="timeline__year-label" id={`timeline-year-${year.year}`}>
         <h2>{year.year}</h2>
@@ -24,12 +24,7 @@ const { years = [] } = Astro.props as { years?: TimelineYear[] };
                   : "timeline__card--right",
               ]}
             >
-              {card.block && (
-                <ContentBlock
-                  block={{ type: "block", block: card.block }}
-                  variant="card"
-                />
-              )}
+              <ContentBlock block={card} variant="card" />
             </article>
           ))}
         </div>

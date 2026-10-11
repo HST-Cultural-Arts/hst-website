@@ -54,8 +54,7 @@ sections:
           technical applications, set design, and stage management.  [Learn
           more](/programs/tech)
       - type: image
-        image:
-          src: /assets/uploads/images/programs.webp
-          size: medium
-          crop: natural
+        src: /assets/uploads/images/programs.webp
+        size: medium
+        crop: natural
 ---

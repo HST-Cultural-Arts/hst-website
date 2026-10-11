@@ -77,8 +77,7 @@ sections:
           *deductible. Home schooled students of any race or religion are
           welcome.*
       - type: image
-        image:
-          src: /assets/uploads/images/history.webp
-          size: medium
-          crop: natural
+        src: /assets/uploads/images/history.webp
+        size: medium
+        crop: natural
 ---
