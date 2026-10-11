@@ -1,16 +1,18 @@
 ---
 import "../styles/content-block.css";
 import ContentBlockContent from "./ContentBlockContent.astro";
-import type { ContentBlockData } from "../content.config";
+import type { ContentBlock } from "../content.config";
 
 const { block, className = "", variant = "default" } = Astro.props as {
-  block?: ContentBlockData;
+  block?: ContentBlock;
   className?: string;
   variant?: "default" | "card" | "transparent";
 };
 
-const blockVariant = block?.block?.variant ?? variant;
-const blockColor = block?.block?.color ?? "transparent";
+const blockVariant =
+  block?.type === "block" ? block.variant ?? variant : variant;
+const blockColor =
+  block?.type === "block" ? block.color ?? "transparent" : "transparent";
 ---
 
 <section
@@ -23,8 +25,8 @@ const blockColor = block?.block?.color ?? "transparent";
 >
   {block ? (
     <>
-      {block.block ? (
-        block.block.blocks?.map((nestedBlock) => (
+      {block.type === "block" ? (
+        block.blocks?.map((nestedBlock) => (
           <Astro.self block={nestedBlock} />
         ))
       ) : (
