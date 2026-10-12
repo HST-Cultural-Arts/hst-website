@@ -68,7 +68,7 @@
 
 .content-section--navy {
     background-color: var(--color-surface-inverse);
-    border-color: var(--color-border-gold);
+    border-color: var(--color-border-inverse);
     color: var(--color-text-inverse);
 }
 
@@ -111,37 +111,43 @@
     color: var(--color-text-body);
 }
 
-.content-section--halos {
-    border-color: var(--color-border-gold);
-    background-color: var(--color-surface-inverse);
-    background-image:
-        radial-gradient(
-            ellipse 60% 55% at 18% 22%,
-            rgba(194, 160, 90, 0.28),
-            transparent 70%
-        ),
-        radial-gradient(
-            ellipse 55% 65% at 85% 30%,
-            rgba(61, 88, 120, 0.45),
-            transparent 72%
-        ),
-        radial-gradient(
-            ellipse 70% 60% at 10% 100%,
-            rgba(5, 8, 15, 0.85),
-            transparent 75%
-        ),
-        radial-gradient(
-            ellipse 45% 40% at 60% 8%,
-            rgba(253, 251, 246, 0.10),
-            transparent 70%
-        );
+.content-section--slate {
+    background-color: var(--slate-700);
+    border-color: var(--slate-500);
     color: var(--color-text-inverse);
+}
+
+.content-section--slate h1,
+.content-section--slate h2,
+.content-section--slate h3,
+.content-section--slate h4 {
+    color: var(--color-text-inverse);
+}
+
+.content-section--slate p {
+    color: var(--color-text-inverse-muted);
+}
+
+.content-section--gold {
+    background-color: var(--gold-500);
+    border-color: var(--gold-600);
+    color: var(--navy-950);
+}
+
+.content-section--gold h1,
+.content-section--gold h2,
+.content-section--gold h3,
+.content-section--gold h4 {
+    color: var(--navy-950);
+}
+
+.content-section--gold p {
+    color: var(--navy-800);
 }
 
 .content-section--home-hero {
     position: relative;
     overflow: hidden;
-    border-bottom: 4px solid var(--color-border-gold);
     gap: 0;
     min-height: 80vh;
     align-items: flex-start;
@@ -197,8 +203,4 @@
     margin: 0;
     text-transform: uppercase;
     font-size: var(--text-3xl);
-}
-
-.content-section--halos p {
-    color: var(--color-text-inverse-muted);
 }

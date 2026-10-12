@@ -2,13 +2,8 @@
 import Image from "./Image.astro";
 import "../styles/gallery.css";
 
-interface GalleryImage {
-  src: string;
-  alt?: string;
-}
-
 interface Props {
-  images?: GalleryImage[];
+  images?: string[];
   size?: "small" | "medium" | "large" | "full";
   crop?: "natural" | "landscape" | "square" | "portrait";
   controls?: boolean;
@@ -43,13 +38,13 @@ const hasMultipleImages = images.length > 1;
   data-gallery-interval={autoScrollInterval}
   data-gallery-pause-on-hover={pauseOnHover ? "true" : "false"}
 >
-  <div class="gallery__viewport" tabindex="0" aria-label="Image gallery">
+  <div class="gallery__viewport" tabindex="0">
     <div class="gallery__track">
-      {images.map((image) => (
+      {images.map((src) => (
         <div class="gallery__slide">
           <Image
-            src={image.src}
-            alt={image.alt ?? ""}
+            src={src}
+            alt=""
             size="full"
             crop={crop}
           />
@@ -113,6 +108,17 @@ const hasMultipleImages = images.length > 1;
       });
     };
 
+    const resetToFirstSlide = () => {
+      currentIndex = 0;
+      viewport.scrollLeft = 0;
+      indicators.forEach((indicator, indicatorIndex) => {
+        indicator.setAttribute(
+          "aria-current",
+          indicatorIndex === 0 ? "true" : "false",
+        );
+      });
+    };
+
     const stopAutoScroll = () => {
       if (timer !== undefined) {
         window.clearInterval(timer);
@@ -144,6 +150,8 @@ const hasMultipleImages = images.length > 1;
       gallery.addEventListener("focusout", startAutoScroll);
     }
 
+    resetToFirstSlide();
+    requestAnimationFrame(resetToFirstSlide);
     startAutoScroll();
   });
 </script>
