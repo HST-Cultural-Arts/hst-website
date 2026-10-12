@@ -10,7 +10,7 @@ sections:
         controls: true
         indicators: false
         autoScroll: true
-        autoScrollInterval: 2000
+        autoScrollInterval: 3000
         images:
           - /assets/uploads/images/homepage/gallery/IMG_4449.webp
           - /assets/uploads/images/homepage/gallery/IMG_4484.webp
