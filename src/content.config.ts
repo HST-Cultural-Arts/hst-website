@@ -23,13 +23,8 @@ export type Embed = {
   height?: "short" | "medium" | "tall";
 };
 
-export type GalleryImage = {
-  src: string;
-  alt?: string;
-};
-
 export type Gallery = {
-  images: GalleryImage[];
+  images: string[];
   size?: "small" | "medium" | "large" | "full";
   crop?: "natural" | "landscape" | "square" | "portrait";
   controls?: boolean;
@@ -66,7 +61,7 @@ export type ContentBlock =
     })
   | {
       type: "block";
-      color?: "navy" | "cream" | "white" | "transparent";
+      color?: "navy" | "cream" | "white" | "slate" | "gold" | "transparent";
       variant?: "default" | "card";
       layout?: Layout;
       blocks?: ContentBlock[];
@@ -82,7 +77,7 @@ export type Timeline = {
 };
 
 export type ContentSection = {
-  color: "navy" | "cream" | "white" | "halos";
+  color: "navy" | "cream" | "white" | "slate" | "gold";
   layout?: Layout;
   blocks?: ContentBlock[];
 };
@@ -99,13 +94,8 @@ const imageSchema = z.object({
   crop: z.enum(["natural", "landscape", "square", "portrait"]).optional(),
 });
 
-const galleryImageSchema = z.object({
-  src: z.string(),
-  alt: z.string().optional(),
-});
-
 const gallerySchema = z.object({
-    images: z.array(galleryImageSchema),
+    images: z.array(z.string()),
     size: z.enum(["small", "medium", "large", "full"]).optional(),
     crop: z.enum(["natural", "landscape", "square", "portrait"]).optional(),
     controls: z.boolean().optional(),
@@ -164,7 +154,7 @@ const contentBlockSchema: ZodType<ContentBlock> = z.lazy(
       z.object({
         type: z.literal("block"),
         color: z
-          .enum(["navy", "cream", "white", "transparent"])
+          .enum(["navy", "cream", "white", "slate", "gold", "transparent"])
           .optional(),
         variant: z.enum(["default", "card"]).optional(),
         layout: layoutSchema.optional(),
@@ -186,7 +176,7 @@ const timelineBlockSchema = z.lazy(() =>
 );
 
 const contentSectionSchema = z.object({
-  color: z.enum(["navy", "cream", "white", "halos"]),
+  color: z.enum(["navy", "cream", "white", "slate", "gold"]),
   layout: layoutSchema.optional(),
   blocks: z.array(contentBlockSchema).optional(),
 });

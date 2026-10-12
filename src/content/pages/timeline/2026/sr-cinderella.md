@@ -12,70 +12,37 @@ sections:
     blocks:
       - type: gallery
         images:
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7371.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7390.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7392.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7399.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7433.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7448.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7458.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7469.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7488.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7507.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7530.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7539.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7546.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7548.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7605.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7615.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7617.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7626.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7631.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7657.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7662.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7664.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7695.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7718.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7743.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7756.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7767.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7777.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7779.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7789.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7804.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7848.webp
-          alt: Cinderella production photo
-        - src: /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7878.webp
-          alt: Cinderella production photo
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7371.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7390.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7392.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7399.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7433.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7448.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7458.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7469.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7488.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7507.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7530.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7539.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7546.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7548.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7605.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7615.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7617.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7626.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7631.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7657.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7662.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7664.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7695.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7718.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7743.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7756.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7767.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7777.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7779.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7789.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7804.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7848.webp
+        - /assets/uploads/images/timeline/2026/SR - Cinderella/IMG_7878.webp
 ---

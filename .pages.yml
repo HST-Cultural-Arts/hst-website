@@ -44,20 +44,14 @@ components:
     fields:
       - name: images
         label: Gallery images (add one or more)
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "Image {index}"
-        fields:
-          - name: src
-            label: Image file
-            type: image
-            required: true
-          - name: alt
-            label: Accessibility text
-            type: string
-            description: Describe the image for screen readers. Leave blank only for decorative images.
+        type: image
+        options:
+          media: images
+          path: public/assets/uploads/images
+          multiple:
+            max: 500
+          unique: true
+        description: Select multiple images at once. Images are decorative by default.
       - name: size
         label: Gallery width
         type: select
@@ -103,7 +97,7 @@ components:
         type: select
         default: transparent
         options:
-          values: [navy, cream, white, transparent]
+          values: [navy, cream, white, slate, gold, transparent]
         description: Choose a background color for this group of blocks.
       - name: variant
         label: Block style
@@ -169,7 +163,7 @@ components:
         type: select
         default: transparent
         options:
-          values: [navy, cream, white, transparent]
+          values: [navy, cream, white, slate, gold, transparent]
         description: Choose a background color for this group of blocks.
       - name: variant
         label: Block style
@@ -235,7 +229,7 @@ components:
         type: select
         default: transparent
         options:
-          values: [navy, cream, white, transparent]
+          values: [navy, cream, white, slate, gold, transparent]
         description: Choose a background color for this group of blocks.
       - name: variant
         label: Block style
@@ -418,7 +412,7 @@ components:
                 type: select
                 default: white
                 options:
-                  values: [navy, cream, white, transparent]
+                  values: [navy, cream, white, slate, gold, transparent]
               - name: variant
                 label: Block style
                 type: select
@@ -480,7 +474,7 @@ components:
         required: true
         default: cream
         options:
-          values: [navy, cream, white, halos]
+          values: [navy, cream, white, slate, gold]
         description: Choose the section background color.
       - name: layout
         label: Layout
